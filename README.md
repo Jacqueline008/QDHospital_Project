@@ -14,7 +14,7 @@
 青岛在线挂号平台是为为青岛市民提供的网上预约服务的平台，该平台可为患者，系统管理员，医院管理员，专家四种角色提供服务
 ```
 #### 用例图
-<img src="https://github.com/Jacqueline008/QDHospital_Project/blob/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/%E7%94%A8%E4%BE%8B%E5%9B%BE.png?raw=true" style="width:300px;height:500px;">
+<img src="https://github.com/Jacqueline008/QDHospital_Project/blob/master/%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE/%E7%94%A8%E4%BE%8B%E5%9B%BE.png?raw=true" width = "300" height = "200">
 
 ### 系统运行截图
 ***

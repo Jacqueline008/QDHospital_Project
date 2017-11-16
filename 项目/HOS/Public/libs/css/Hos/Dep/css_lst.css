@@ -1,0 +1,299 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+
+
+/************************************/
+/***************平板以及手机下的列表****/
+
+/********************************/
+/*************手机下的内容展示*****/
+
+
+
+/***********************************************************************/
+/*******************信息展示容器     begin********************************/
+/****************容器左侧部分(列表)******************/
+
+/****************容器右侧部分(内容展示)  begin*******/
+
+/*****************右侧部分1:搜索栏部分  begin***/
+
+/********搜索栏中的搜索项 begin*/
+#info-container{
+    height: 700px;
+}
+/*自定义*/
+.dep-info{
+    width:320px;
+    text-align: left;
+}
+/*自定义*/
+.dep-info input{
+    width:200px;
+}
+/*自定义*/
+.dic-value{
+    width:320px;
+    text-align: left;
+}
+/*自定义*/
+.dic-value select{
+    width:230px;
+}
+/**********搜索栏中的搜索项 end*/
+
+/*搜索栏中的按钮容器  begin*****/
+/*搜索栏中的按钮容器  end*****/
+
+/*****************右侧部分1:搜索栏部分  end***/
+
+/*****************右侧部分2:列表部分  begin**/
+/*自定义*/
+.list-item{
+    height: 100px;
+    line-height: 100px;
+}
+/*自定义*/
+.list-container .dep_code,.dep_name ,.dic_value{
+    width:100px;
+    float: left;
+    text-align: center;
+}
+/*自定义*/
+.list-container .dep_description{
+    width:350px;
+    float: left;
+    text-align: center;
+}
+/*自定义*/
+.list-item .dep_description{
+    font-size: 12px;
+    line-height: 20px;
+    height: 100%;
+    padding-top: 10px;
+    word-wrap: break-word;
+}
+/**********列表中的按钮容器  begin*****/
+/*自定义*/
+.btn-edit,.btn-del{
+    top:37px;
+}
+/**********列表中的按钮容器  end*****/
+/*****************右侧部分2:列表部分  end**/
+
+/*****************右侧部分3:分页部分  begin**/
+/*****************右侧部分3:分页部分  end**/
+
+/****************容器右侧部分(内容展示)  end*******/
+
+/***********************************************************************/
+/*******************信息展示容器     end********************************/
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    /****************容器左侧部分(列表)******************/
+
+    /****************容器右侧部分(内容展示)  begin*******/
+    /*****************右侧部分1:搜索栏部分  begin***/
+    /*自定义*/
+    .dep-info{
+        width:300px;
+        text-align: left;
+    }
+    /*自定义*/
+    .dep-info input{
+        width:200px;
+    }
+    /*自定义*/
+    .dic-value{
+        width:300px;
+        text-align: left;
+    }
+    /*自定义*/
+    .dic-value select{
+        width:230px;
+    }
+    /*搜索栏中的按钮容器  begin*****/
+    /*搜索栏中的按钮容器  end*****/
+    /*****************右侧部分1:搜索栏部分  end***/
+
+    /*****************右侧部分2:列表部分  begin**/
+    /*自定义*/
+    .list-container .dep_code,.dep_name ,.dic_value{
+        width:80px;
+    }
+    /*自定义*/
+    .list-container .dep_description{
+        width:350px;
+    }
+    /**********列表中的按钮容器  begin*****/
+    /**********列表中的按钮容器  end*****/
+    /*****************右侧部分2:列表部分  end**/
+
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+}
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    #info-container{
+        height: 700px;
+    }
+    /****************容器左侧部分(列表)******************/
+
+    /****************容器右侧部分(内容展示)  begin*******/
+    /*****************右侧部分1:搜索栏部分  begin***/
+    /*自定义*/
+    .dep-info{
+        width:275px;
+        text-align: left;
+    }
+    /*自定义*/
+    .dep-info input{
+        width:170px;
+    }
+    /*自定义*/
+    .dic-value{
+        width:275px;
+        text-align: left;
+    }
+    /*自定义*/
+    .dic-value select{
+        width:190px;
+    }
+    /*****************右侧部分1:搜索栏部分  end***/
+
+    /*****************右侧部分2:列表部分  begin**/
+    .list-container{
+        height: 550px;
+    }
+    /*自定义*/
+    .list-container .dep_code,.dep_name ,.dic_value{
+        width:75px;
+    }
+    /*自定义*/
+    .list-container .dep_description{
+        width:310px;
+    }
+    /*****************右侧部分2:列表部分  end**/
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+
+
+    /******************************************/
+    /***************平板以及手机下的列表 begin****/
+    /*自定义*/
+    .info-list-mobile{
+        display: block;
+    }
+    /*自定义*/
+    .info-list-mobile a{
+        display: block;
+        width: 16.5%;
+        margin-right: 0.15%;
+    }
+    /*自定义*/
+    .last{
+        margin-right: 0;
+    }
+    /******************************************/
+    /***************平板以及手机下的列表 end****/
+
+}
+
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /*总容器 隐藏掉为移动端以上设计的信息展示容器*/
+
+
+    /*************************************/
+    /*************手机下的内容展示 begin*****/
+    /*****************部分1:搜索栏部分  begin***/
+    /*自定义*/
+    .info-content-mobile .ic-search-m{
+        width: 100%;
+        height: 100px;
+    }
+    /*自定义*/
+    .dep-info-m{
+        width:49%;
+        float: left;
+    }
+    /*自定义*/
+    .dic-value-m{
+        width:49%;
+        float: right;
+    }
+    /*搜索栏中的按钮容器  begin*****/
+    /*搜索栏中的按钮容器  end*****/
+    /*****************部分1:搜索栏部分  end***/
+
+    /*****************部分2:列表部分 begin***/
+    .list-container-m{
+        height: auto;
+    }
+    /*自定义*/
+    .list-item-m{
+        height: auto;
+        overflow: hidden;
+    }
+    .list-item-m .dep_name-m,.dep_code-m,.dic_value-m,.btn-container-m{
+        display: block;
+        width:25%;
+        height: 35px;
+        line-height: 35px;
+        float: left;
+        margin-top: 10px;
+    }
+    /*自定义*/
+    .dep_name-m{
+        font-weight: 600;
+    }
+    /*自定义*/
+    .dic_value-m span{
+        display: block;
+        width: 65px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        background-color: #FDE8C9;
+        color: #E87404;
+        position: relative;
+        top: 3px;
+    }
+    .dep_description-m{
+        display: block;
+        float:left;
+        margin: 10px 0;
+        width:100%;
+        word-wrap: break-word;
+    }
+    /*****************部分2:列表部分 end***/
+
+    /****************部分3：分页部分 begin*/
+    /****************部分3：分页部分 end*/
+    /*************************************/
+    /*************手机下的内容展示 end*****/
+
+}
+
+

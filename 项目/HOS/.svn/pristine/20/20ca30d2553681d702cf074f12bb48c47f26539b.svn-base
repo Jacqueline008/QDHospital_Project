@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>预约挂号-坐诊展示</title>
+    <!--(必需)css-bootstrap-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--(必需)css-page-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/css/Home/css_page.css">
+    <!--css-lst-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/css/Home/css_lst.css">
+    <!--css-this-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/css/Pat/Treatment/css_dutyShow.css">
+</head>
+<body>
+
+<!--(必需)网站上方固定不动的标头-->
+<header id="site-nav">
+    <div class="sn-container">
+        <!--网站logo-->
+        <a href="#" class="sn-logo"><img src="__ROOT__/Public/images/logo.png"></a>
+        <!--展示下拉菜单的图标-->
+        <a href="#" class="sn-showmenu"><img src="__ROOT__/Public/images/menu1.png"></a>
+        <!--快速导航菜单-->
+        <div class="sn-quick-menu">
+            <a href="#" class="sn-home sn-hover">首页</a>
+            <a href="#" class="sn-login sn-hover">登录</a>
+            <a href="#" class="sn-sys sn-hover"></a>
+            <a href="#" class="sn-hos sn-hover"></a>
+            <a href="#" class="sn-doc sn-hover"></a>
+            <a href="#" class="sn-pat sn-hover"></a>
+            <a href="#" class="sn-logout sn-hover">退出</a>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+<!--手机下的内容展示  begin-->
+<div class="info-content-mobile">
+
+    <!--部分1：列表部分 begin-->
+    <div class="list-container-m">
+
+        <volist name="result_array" id="result_item" empty="$empty">
+            <div class="item-m">
+                <div class="doc-info-m" name="{$result_item.doc_code}">
+                    <img src="{$result_item.doc_pic}">
+                    <span class="doc_name_m">{$result_item.doc_name}</span>
+                    <span class="doclevel_name_m">{$result_item.doclevel_name}</span>
+                    <span class="doc_area_m">擅长:{$result_item.doc_area}...</span>
+                </div>
+                <div class="duty-container-m">
+                    <div class="range">
+                        <span>时间</span>
+                        <span>上午</span>
+                        <span>下午</span>
+                    </div>
+                    <div class="one">
+
+                        <volist name="week_array" id="week_item" offset="0" length="1">
+                            <span>
+                                <span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">{$week_item.date}</span>
+                                    <switch name="week_item.day" >
+                                    <case value="1"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期一</span></case>
+                                    <case value="2"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期二</span></case>
+                                    <case value="3"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期三</span></case>
+                                    <case value="4"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期四</span></case>
+                                    <case value="5"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期五</span></case>
+                                    <case value="6"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期六</span></case>
+                                    <case value="0"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期日</span></case>
+                                    </switch>
+                            </span>
+                        </volist>
+
+                        <volist name="result_item.duty" id="duty_array_item" offset="0" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="1">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="1" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="1">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                    </div>
+                    <div class="two">
+
+                        <volist name="week_array" id="week_item" offset="1" length="1">
+                            <span>
+                                <span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">{$week_item.date}</span>
+                                    <switch name="week_item.day" >
+                                    <case value="1"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期一</span></case>
+                                    <case value="2"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期二</span></case>
+                                    <case value="3"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期三</span></case>
+                                    <case value="4"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期四</span></case>
+                                    <case value="5"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期五</span></case>
+                                    <case value="6"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期六</span></case>
+                                    <case value="0"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期日</span></case>
+                                    </switch>
+                            </span>
+                        </volist>
+
+                        <volist name="result_item.duty" id="duty_array_item" offset="2" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="2">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="3" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="2">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                    </div>
+                    <div class="three">
+
+                        <volist name="week_array" id="week_item" offset="2" length="1">
+                            <span>
+                                <span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">{$week_item.date}</span>
+                                    <switch name="week_item.day" >
+                                    <case value="1"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期一</span></case>
+                                    <case value="2"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期二</span></case>
+                                    <case value="3"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期三</span></case>
+                                    <case value="4"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期四</span></case>
+                                    <case value="5"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期五</span></case>
+                                    <case value="6"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期六</span></case>
+                                    <case value="0"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期日</span></case>
+                                    </switch>
+                            </span>
+                        </volist>
+
+                        <volist name="result_item.duty" id="duty_array_item" offset="4" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="3">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="5" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="3">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                    </div>
+                    <div class="four">
+
+                        <volist name="week_array" id="week_item" offset="3" length="1">
+                            <span>
+                                <span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">{$week_item.date}</span>
+                                    <switch name="week_item.day" >
+                                    <case value="1"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期一</span></case>
+                                    <case value="2"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期二</span></case>
+                                    <case value="3"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期三</span></case>
+                                    <case value="4"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期四</span></case>
+                                    <case value="5"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期五</span></case>
+                                    <case value="6"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期六</span></case>
+                                    <case value="0"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期日</span></case>
+                                    </switch>
+                            </span>
+                        </volist>
+
+                        <volist name="result_item.duty" id="duty_array_item" offset="6" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="4">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="7" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="4">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                    </div>
+                    <div class="five">
+
+                        <volist name="week_array" id="week_item" offset="4" length="1">
+                            <span>
+                                <span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">{$week_item.date}</span>
+                                    <switch name="week_item.day" >
+                                    <case value="1"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期一</span></case>
+                                    <case value="2"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期二</span></case>
+                                    <case value="3"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期三</span></case>
+                                    <case value="4"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期四</span></case>
+                                    <case value="5"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期五</span></case>
+                                    <case value="6"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期六</span></case>
+                                    <case value="0"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期日</span></case>
+                                    </switch>
+                            </span>
+                        </volist>
+
+                        <volist name="result_item.duty" id="duty_array_item" offset="8" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="5">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="9" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="5">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                    </div>
+                    <div class="six">
+
+                        <volist name="week_array" id="week_item" offset="5" length="1">
+                            <span>
+                                <span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">{$week_item.date}</span>
+                                    <switch name="week_item.day" >
+                                    <case value="1"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期一</span></case>
+                                    <case value="2"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期二</span></case>
+                                    <case value="3"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期三</span></case>
+                                    <case value="4"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期四</span></case>
+                                    <case value="5"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期五</span></case>
+                                    <case value="6"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期六</span></case>
+                                    <case value="0"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期日</span></case>
+                                    </switch>
+                            </span>
+                        </volist>
+
+                        <volist name="result_item.duty" id="duty_array_item" offset="10" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="6">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="11" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="6">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                    </div>
+                    <div class="seven">
+
+                        <volist name="week_array" id="week_item" offset="6" length="1">
+                            <span>
+                                <span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">{$week_item.date}</span>
+                                    <switch name="week_item.day" >
+                                    <case value="1"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期一</span></case>
+                                    <case value="2"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期二</span></case>
+                                    <case value="3"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期三</span></case>
+                                    <case value="4"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期四</span></case>
+                                    <case value="5"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期五</span></case>
+                                    <case value="6"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期六</span></case>
+                                    <case value="0"><span style="width:100%;font-size: 10px;line-height: 15px;height: 15px;border:none;">星期日</span></case>
+                                    </switch>
+                            </span>
+                        </volist>
+
+                        <volist name="result_item.duty" id="duty_array_item" offset="12" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="7">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="13" length="1">
+                            <span name="{$duty_array_item.dut_code}" name2="7">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width: 100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width: 100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </span>
+                        </volist>
+                    </div>
+                </div>
+            </div>
+        </volist>
+
+    </div>
+    <!--部分1：列表部分 end-->
+
+    <!--部分2：分页部分 begin-->
+    <div class="page-list-m">{$page2}</div>
+    <!--部分2：分页部分 end-->
+
+</div>
+<!--手机下的内容展示  end-->
+
+<!--*************************************************************************************-->
+
+<!--信息展示容器-->
+<div id="info-container">
+
+
+    <!--容器右侧部分（内容展示） begin-->
+    <div class="info-content">
+        <!--右侧1:列表部分 begin-->
+        <div class="list-container">
+
+            <div class="head">
+                <div class="doc-info">专家</div>
+                <div class="duty-container">
+                    <span class="range">时间</span>
+                    <volist name="week_array" id="week_item" empty="$empty">
+                        <span>
+                            <span style="width:100%;font-size: 10px;line-height: 25px;height: 25px;">{$week_item.date}</span>
+                                <switch name="week_item.day" >
+                                <case value="1"><span style="width:100%;font-size: 12px;line-height: 20px;height: 20px;">星期一</span></case>
+                                <case value="2"><span style="width:100%;font-size: 12px;line-height: 20px;height: 20px;">星期二</span></case>
+                                <case value="3"><span style="width:100%;font-size: 12px;line-height: 20px;height: 20px;">星期三</span></case>
+                                <case value="4"><span style="width:100%;font-size: 12px;line-height: 20px;height: 20px;">星期四</span></case>
+                                <case value="5"><span style="width:100%;font-size: 12px;line-height: 20px;height: 20px;">星期五</span></case>
+                                <case value="6"><span style="width:100%;font-size: 12px;line-height: 20px;height: 20px;">星期六</span></case>
+                                <case value="0"><span style="width:100%;font-size: 12px;line-height: 20px;height: 20px;">星期日</span></case>
+                                </switch>
+                        </span>
+                    </volist>
+                </div>
+            </div>
+
+
+            <volist name="result_array" id="result_item" empty="$empty">
+                <div class="item">
+                    <div class="doc-info" name="{$result_item.doc_code}">
+                        <img src="{$result_item.doc_pic}">
+                        <span class="doc_name">{$result_item.doc_name}</span>
+                        <span class="doclevel_name">{$result_item.doclevel_name}</span>
+                        <span class="doc_area">擅长:{$result_item.doc_area}...</span>
+                    </div>
+                    <div class="duty-container">
+                    <span class="range">
+                        <div class="up">上午</div>
+                        <div class="down">下午</div>
+                    </span>
+                    <span class="one">
+                        <volist name="result_item.duty" id="duty_array_item" offset="0" length="1">
+                            <div class="up" name="{$duty_array_item.dut_code}" name2="1">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="1" length="1">
+                            <div class="down" name="{$duty_array_item.dut_code}" name2="1">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                    </span>
+                    <span class="two">
+                        <volist name="result_item.duty" id="duty_array_item" offset="2" length="1">
+                            <div class="up" name="{$duty_array_item.dut_code}" name2="2">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="3" length="1">
+                            <div class="down" name="{$duty_array_item.dut_code}" name2="2">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                    </span>
+                    <span class="three">
+                        <volist name="result_item.duty" id="duty_array_item" offset="4" length="1">
+                            <div class="up" name="{$duty_array_item.dut_code}" name2="3">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="5" length="1">
+                            <div class="down" name="{$duty_array_item.dut_code}" name2="3">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                    </span>
+                    <span class="four">
+                        <volist name="result_item.duty" id="duty_array_item" offset="6" length="1">
+                            <div class="up" name="{$duty_array_item.dut_code}" name2="4">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;" class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="7" length="1">
+                            <div class="down" name="{$duty_array_item.dut_code}" name2="4">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                    </span>
+                    <span class="five">
+                        <volist name="result_item.duty" id="duty_array_item" offset="8" length="1">
+                            <div class="up" name="{$duty_array_item.dut_code}" name2="5">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="9" length="1">
+                            <div class="down" name="{$duty_array_item.dut_code}" name2="5">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                    </span>
+                    <span class="six">
+                        <volist name="result_item.duty" id="duty_array_item" offset="10" length="1">
+                            <div class="up" name="{$duty_array_item.dut_code}">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="11" length="1">
+                            <div class="down" name="{$duty_array_item.dut_code}">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                    </span>
+                    <span class="seven">
+                        <volist name="result_item.duty" id="duty_array_item" offset="12" length="1">
+                            <div class="up" name="{$duty_array_item.dut_code}">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                        <volist name="result_item.duty" id="duty_array_item" offset="13" length="1">
+                            <div class="down" name="{$duty_array_item.dut_code}">
+                                <if condition="$duty_array_item.dut_status eq 0">
+                                    <span style="color:#C31E22;width:100%;border:none;"></span>
+                                    <else/>
+                                    <span style="color:#3DAFA7;width:100%;border:none;"class="duty_ready">预约</span>
+                                </if>
+                            </div>
+                        </volist>
+                    </span>
+                    </div>
+                </div>
+            </volist>
+
+        </div>
+        <!--右侧1:列表部分 end-->
+        <!--右侧2:分页部分 begin-->
+        <div class="page-list">{$page}</div>
+        <!--右侧2:分页部分 end-->
+    </div>
+    <!--容器右侧部分（内容展示） end-->
+
+</div>
+
+
+
+<!--(必需)模态框-->
+<div class="modal" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">来自预约平台的提示:</h4>
+            </div>
+            <div class="modal-body">
+                模态弹出窗主体内容
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--(必需)页尾-->
+<footer id="footer">
+    <div class="container">
+        <img src="__ROOT__/Public/images/footer.png">
+        <span>作者:青岛大学2014级开源方向-李艺鸣</span>
+    </div>
+</footer>
+
+
+<div id="bg_test" style="height: 100px;width: 100%;"></div>
+
+</body>
+<!--(必需)js-jquery-->
+<script src="__ROOT__/Public/libs/js/jquery-2.2.4.min.js"></script>
+<!--(必需)js-bootstrap-->
+<script src="__ROOT__/Public/libs/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<!--******(必需)js-page begin******-->
+<script>
+    //标头需要ajax请求的地址
+    var headerRequestUrl="http://{:C('IP_URL')}/HOS/Home/Header/showHeaderJSON";
+    //标头中退出按钮中确定按钮请求的地址
+    var logoutRequestUrl="http://{:C('IP_URL')}/HOS/Home/Header/logout";
+    //网站首页（医院展示）的地址
+    var HomeUrl="http://{:C('IP_URL')}/HOS/Pat/Treatment/hospitalShow";
+</script>
+<script src="__ROOT__/Public/libs/js/Home/js_page.js"></script>
+<!--******(必需)js-page end******-->
+<!--js-this-->
+<script>
+    //点击专家跳转的页面
+    var GOTOUrl="http://{:C('IP_URL')}/HOS/Pat/Treatment/docShow";
+    //点击预约请求的逻辑地址
+    var editUrl="http://{:C('IP_URL')}/HOS/Pat/Treatment/dutyShowEdit";
+</script>
+<script src="__ROOT__/Public/libs/js/Pat/Treatment/js_dutyShow.js"></script>
+
+</html>

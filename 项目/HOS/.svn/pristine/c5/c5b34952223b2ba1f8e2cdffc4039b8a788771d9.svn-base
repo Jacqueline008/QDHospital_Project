@@ -1,0 +1,6 @@
+<?php
+namespace Doc\Controller;
+use Think\Controller;
+class DutyController extends Controller {
+
+}

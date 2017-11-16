@@ -1,0 +1,11 @@
+$(function () {
+    //点击专家信息跳转到专家详细信息展示页面
+    $(".doc-info").click(function () {
+        window.location.href=GOTOUrl+"/doc_code/"+$(this).attr("name");
+    });
+
+    //点击专家信息跳转到专家详细信息展示页面移动端
+    $(".doc-info-m").click(function () {
+        window.location.href=GOTOUrl+"/doc_code/"+$(this).attr("name");
+    });
+});

@@ -1,0 +1,153 @@
+#bg_test{
+    position: relative;
+    top:150px;
+    background-color: purple;
+}
+
+/*********************医院信息展示容器 begin*****************/
+#hosinfo-container{
+    width:1170px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top:100px;
+}
+/***********医院信息容器-上 begin*********/
+.hosinfo-up{
+    height: 28px;
+}
+.hos_name{
+    display: block;
+    width: 200px;
+    height: 28px;
+    font-size: 20px;
+    color: #666;
+    font-weight: 600;
+    float: left;
+}
+.hoslevel_name{
+    display: block;
+    width:100px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #FDE8C9;
+    color:#E87404;
+    position: relative;
+    float: left;
+    margin-left: 50px;
+}
+.cant_name{
+    display: block;
+    width:100px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #CBF0BA;
+    color:#3DAFA7;
+    position: relative;
+    float: left;
+    margin-left: 30px;
+}
+/***********医院信息容器-上 end*********/
+
+/***********医院信息容器-下 begin*********/
+.hosinfo-down{
+    /*background-color: pink;*/
+    height: auto;
+    margin-top: 10px;
+}
+.hosinfo-down img{
+    width:200px;
+    height: 150px;
+    float:left;
+    margin-top: 10px;
+}
+.hosinfo-down .mix-container{
+    padding-left: 250px;
+    font-size: 16px;
+}
+.mix-container .tel,.addr,.msg{
+    margin: 5px 0;
+}
+.mix-container .msg{
+}
+/***********医院信息容器-下 end*********/
+/*********************医院信息展示容器 end*****************/
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /*********************医院信息展示容器 begin*****************/
+    #hosinfo-container{
+        width:970px;
+    }
+    /*********************医院信息展示容器 end*****************/
+
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+    /*********************医院信息展示容器 begin*****************/
+    #hosinfo-container{
+        width:750px;
+    }
+    .hoslevel_name{
+        margin-left: 20px;
+    }
+    .hosinfo-down .mix-container{
+        padding-left: 220px;
+        font-size: 14px;
+    }
+    /*********************医院信息展示容器 end*****************/
+
+
+}
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+
+    /*********************医院信息展示容器 begin*****************/
+    #hosinfo-container{
+        width:100%;
+        top:100px;
+        padding: 0 5px;
+    }
+    /***********医院信息容器-上 begin*********/
+    .hosinfo-up{
+        height: 28px;
+    }
+    .hos_name{
+        font-size: 18px;
+    }
+    .hoslevel_name{
+        margin-left: 10px;
+    }
+    /***********医院信息容器-上 end*********/
+
+    /***********医院信息容器-下 begin*********/
+    .hosinfo-down{
+        margin-top: 5px;
+    }
+    .hosinfo-down img{
+        display: none;
+    }
+    .hosinfo-down .mix-container{
+        padding-left: 0px;
+        font-size: 14px;
+    }
+    .mix-container .tel,.addr,.msg{
+        margin: 3px 0;
+    }
+    /***********医院信息容器-下 end*********/
+    /*********************医院信息展示容器 end*****************/
+
+}

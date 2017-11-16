@@ -1,0 +1,30 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+body{
+    background-color: #f4f6f8;
+}
+
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+}
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+}
+
+

@@ -1,0 +1,316 @@
+/************************************/
+/***************平板以及手机下的列表****/
+
+/********************************/
+/*************手机下的内容展示*****/
+
+
+/***********************************************************************/
+/*******************信息展示容器     begin********************************/
+/*总容器*/
+/****************容器左侧部分(列表)******************/
+/****************容器右侧部分(内容展示)  begin*******/
+
+/*****************右侧部分1:列表部分  begin**/
+/*列表总容器*/
+.list-container{
+    margin-top: 0;
+}
+.list-container .list-item{
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+/*自定义*/
+.list-container .doc_name,.week_code,.time_range{
+    width:80px;
+    float: left;
+    text-align: center;
+}
+/*自定义*/
+.list-container .begin_date,.end_date,.apply_date{
+    width:100px;
+    float: left;
+    text-align: center;
+}
+/*自定义*/
+.list-container .list-item .apply_date{
+    line-height: 30px;
+    padding-top: 10px;
+}
+/*自定义*/
+.list-container .refuse_reason{
+    width:260px;
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    padding: 10px 10px ;
+}
+/*自定义*/
+.list-container .stop_status{
+    width:100px;
+    float: left;
+    text-align: center;
+}
+/*自定义*/
+.list-container .list-item .stop_status{
+    padding-top: 20px;
+}
+.list-container .stop_status .status-wait{
+    width:90%;
+    margin: 0 auto;
+    height: 40px;
+    display: block;
+    background-color: #FFFF99;
+    color:#FF9900;
+    line-height: 40px;
+}
+.list-container .stop_status .status-refuse{
+    width:90%;
+    margin: 0 auto;
+    height: 40px;
+    display: block;
+    background-color: #FDE8C9;
+    color:#E87404;
+    line-height: 40px;
+}
+.list-container .stop_status .status-agree{
+    width:90%;
+    margin: 0 auto;
+    height: 40px;
+    display: block;
+    background-color: #CBF0BA;
+    color:#3DAFA7;
+    line-height: 40px;
+}
+/*列表的head*/
+/*列表的item*/
+/*****************右侧部分1:列表部分  end**/
+
+/*****************右侧部分2:分页部分  begin**/
+/*****************右侧部分2:分页部分  end**/
+
+/****************容器右侧部分(内容展示)  end*******/
+
+/***************************************************/
+/*******************信息展示容器     end************/
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /***************************************************/
+    /*******************信息展示容器     begin************/
+    /*总容器*/
+    /****************容器左侧部分(列表)******************/
+    /****************容器右侧部分(内容展示)  begin*******/
+
+    /*****************右侧部分1:列表部分  begin**/
+    /*自定义*/
+    .list-container .doc_name,.week_code,.time_range{
+        width:70px;
+    }
+    /*自定义*/
+    .list-container .begin_date,.end_date,.apply_date{
+        width:90px;
+    }
+    /*自定义*/
+    .list-container .list-item .apply_date{
+        line-height: 30px;
+        padding-top: 10px;
+    }
+    /*自定义*/
+    .list-container .refuse_reason{
+        width:220px;
+        line-height: 40px;
+        padding: 0;
+    }
+    /*自定义*/
+    .list-container .list-item .refuse_reason{
+        line-height: 30px;
+        padding-top: 10px;
+    }
+    /*自定义*/
+    .list-container .stop_status{
+        width:100px;
+    }
+    /*自定义*/
+    .list-container .list-item .stop_status{
+        padding-top: 20px;
+    }
+    /*****************右侧部分1:列表部分  end**/
+
+    /****************容器右侧部分(内容展示)  end*******/
+
+    /***************************************************/
+    /*******************信息展示容器     end************/
+}
+
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+
+    /***************************************************/
+    /*******************信息展示容器     begin************/
+    /*总容器*/
+    /****************容器左侧部分(列表)******************/
+    /****************容器右侧部分(内容展示)  begin*******/
+    /*****************右侧部分1:列表部分  begin**/
+    /*自定义*/
+    .list-container .doc_name,.week_code,.time_range{
+        width:60px;
+    }
+    /*自定义*/
+    .list-container .begin_date,.end_date,.apply_date{
+        width:90px;
+    }
+    /*自定义*/
+    .list-container .refuse_reason{
+        width:215px;
+        line-height: 40px;
+        padding: 0;
+    }
+    /*自定义*/
+    .list-container .list-item .refuse_reason{
+        line-height: 30px;
+        padding-top: 10px;
+    }
+    /*自定义*/
+    .list-container .stop_status{
+        width:85px;
+    }
+    /*自定义*/
+    .list-container .list-item .stop_status{
+        padding-top: 20px;
+    }
+    /*****************右侧部分1:列表部分  end**/
+
+    /****************容器右侧部分(内容展示)  end*******/
+
+    /***************************************************/
+    /*******************信息展示容器     end************/
+
+
+
+    /******************************************/
+    /***************平板以及手机下的列表 begin****/
+    /*自定义*/
+    .info-list-mobile a{
+        width: 33%;
+    }
+    /*自定义*/
+    .info-list-mobile .middle{
+        margin: 0 0.5%;
+    }
+    /******************************************/
+    /***************平板以及手机下的列表 end****/
+
+}
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+
+    /*总容器 隐藏掉为移动端以上设计的信息展示容器*/
+
+    /*************************************/
+    /*************手机下的内容展示 begin*****/
+
+    /*****************部分1:列表部分 begin***/
+    .list-container-m{
+        margin-top:0;
+        height: auto;
+    }
+    .list-item-m{
+        height: auto;
+        overflow: hidden;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    /*自定义*/
+    .doc_name-m,.week_code-m,.time_range-m,.stop_status-m{
+        width:25%;
+        float: left;
+        height: 35px;
+        line-height: 35px;
+    }
+    .doc_name-m{
+        font-weight: 600;
+    }
+    .stop_status-m .status-wait-m{
+        width:80px;
+        height: 35px;
+        text-align: center;
+        float: right;
+        background-color: #FFFF99;
+        color:#FF9900;
+        line-height: 35px;
+    }
+    .stop_status-m .status-refuse-m{
+        width:80px;
+        height: 35px;
+        text-align: center;
+        float: right;
+        background-color: #FDE8C9;
+        color:#E87404;
+        line-height: 40px;
+    }
+    .stop_status-m .status-agree-m{
+        width:80px;
+        height: 35px;
+        text-align: center;
+        float: right;
+        background-color: #CBF0BA;
+        color:#3DAFA7;
+        line-height: 40px;
+    }
+    /*自定义*/
+    .begin_date-m{
+        width:49%;
+        float: left;
+        height: 35px;
+        line-height: 35px;
+        text-align: left;
+    }
+    /*自定义*/
+    .end_date-m{
+        width:49%;
+        float: right;
+        height: 35px;
+        line-height: 35px;
+        text-align: right;
+    }
+    /*自定义*/
+    .apply_date-m{
+        width:100%;
+        float: left;
+        height: 35px;
+        line-height: 35px;
+        text-align: left;
+    }
+    /*自定义*/
+    .refuse_reason-m{
+        width:100%;
+        float: left;
+        text-align: left;
+    }
+    .begin_date-m span,.end_date-m span,.apply_date-m span,.refuse_reason-m span{
+        font-weight: 600;
+        color:#888;
+    }
+    /*****************部分1:列表部分 end***/
+
+    /*****************部分2:分页部分 begin***/
+    /*****************部分2:分页部分 end***/
+
+    /*************************************/
+    /*************手机下的内容展示 end*****/
+
+}
+
+

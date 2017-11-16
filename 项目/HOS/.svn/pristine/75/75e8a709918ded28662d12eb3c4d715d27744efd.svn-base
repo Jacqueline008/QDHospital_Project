@@ -1,0 +1,279 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+
+
+/************************************/
+/***************平板以及手机下的列表****/
+
+/********************************/
+/*************手机下的内容展示*****/
+
+
+
+/***********************************************************************/
+/*******************信息展示容器     begin********************************/
+/****************容器左侧部分(列表)******************/
+
+/****************容器右侧部分(内容展示)  begin*******/
+
+/*****************右侧部分1:列表部分  begin**/
+.list-item{
+    height: auto !important;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+/*自定义*/
+.doc_name,.week_code,.time_range{
+    width:60px;
+    float:left;
+    text-align:center;
+}
+/*自定义*/
+.begin_date,.end_date{
+    width:90px;
+    float:left;
+    text-align:center;
+}
+/*自定义*/
+.apply_date{
+    width:90px;
+    word-break: break-all;
+    float:left;
+    text-align:center;
+}
+/*自定义*/
+.list-item .apply_date{
+    padding-top: 15px;
+    line-height: 20px;
+}
+/*自定义*/
+.apply_reason{
+    width:200px;
+    float:left;
+    text-align:center;
+}
+/*自定义*/
+.list-item .apply_reason{
+    line-height: 20px;
+    padding:15px 5px;
+}
+/**********列表中的按钮容器  begin*****/
+.btn-container{
+    padding-top:10px;
+}
+.btn-refuse img{
+    width:15px !important;
+    height:15px !important;
+}
+/**********列表中的按钮容器  end*****/
+/*****************右侧部分1:列表部分  end**/
+
+/*****************右侧部分2:分页部分  begin**/
+/*****************右侧部分2:分页部分  end**/
+
+/****************容器右侧部分(内容展示)  end*******/
+
+/***********************************************************************/
+/*******************信息展示容器     end********************************/
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    /****************容器左侧部分(列表)******************/
+
+    /****************容器右侧部分(内容展示)  begin*******/
+
+    /*****************右侧部分1:列表部分  begin**/
+    .list-item{
+        height: 70px;
+    }
+    /*自定义*/
+    .apply_reason{
+        width:150px;
+    }
+    /**********列表中的按钮容器  begin*****/
+    /**********列表中的按钮容器  end*****/
+    /*****************右侧部分1:列表部分  end**/
+
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+}
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    /****************容器左侧部分(列表)******************/
+
+    /****************容器右侧部分(内容展示)  begin*******/
+
+    /*****************右侧部分1:列表部分  begin**/
+    .list-head{
+        font-size: 12px;
+    }
+    .list-item{
+        height: 70px;
+        font-size: 12px;
+    }
+    /*自定义*/
+    .doc_name{
+        width:60px;
+        float:left;
+        text-align:center;
+    }
+    .week_code,.time_range{
+        width:40px;
+        float:left;
+        text-align:center;
+    }
+    /*自定义*/
+    .begin_date,.end_date{
+        width:80px;
+        float:left;
+        text-align:center;
+    }
+    /*自定义*/
+    .apply_date{
+        width:70px;
+        word-break: break-all;
+        float:left;
+        text-align:center;
+    }
+    /*自定义*/
+    .list-item .apply_date{
+        padding-top: 15px;
+        line-height: 20px;
+    }
+    /*自定义*/
+    .apply_reason{
+        width:180px;
+        float:left;
+        text-align:center;
+    }
+    /*自定义*/
+    .list-item .apply_reason{
+        padding-top: 15px;
+        line-height: 20px;
+    }
+    /*****************右侧部分1:列表部分  end**/
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+
+
+    /******************************************/
+    /***************平板以及手机下的列表 begin****/
+    /*自定义*/
+    .info-list-mobile{
+        display: block;
+    }
+    /*自定义*/
+    .info-list-mobile a{
+        display: block;
+        width: 16.5%;
+        margin-right: 0.15%;
+    }
+    /*自定义*/
+    .last{
+        margin-right: 0;
+    }
+    /******************************************/
+    /***************平板以及手机下的列表 end****/
+
+}
+
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /*总容器 隐藏掉为移动端以上设计的信息展示容器*/
+
+
+    /*************************************/
+    /*************手机下的内容展示 begin*****/
+
+    /*****************部分1:列表部分 begin***/
+    .list-container-m{
+        margin-top: 0;
+        height: 600px;
+    }
+    .list-item-m{
+        height: auto;
+        overflow: hidden;
+        margin-top: 0;
+    }
+    /*自定义*/
+    .doc_name-m,.week_code-m,.time_range-m,.btn-container-m{
+        display:block;
+        width:25%;
+        float:left;
+        height: 35px;
+        line-height: 35px;
+    }
+    .doc_name-m{
+        font-weight: 600;
+        color:#3DAFA7;
+    }
+    /*自定义*/
+    .begin_date-m{
+        display:block;
+        width:49%;
+        float:left;
+        text-align: left;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*自定义*/
+    .end_date-m{
+        display:block;
+        width:49%;
+        float:right;
+        text-align: right;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*自定义*/
+    .apply_date-m{
+        display:block;
+        width:100%;
+        float:left;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*自定义*/
+    .apply_reason-m{
+        display:block;
+        width:100%;
+        float:left;
+        height: auto;
+        line-height: 35px;
+        word-break:break-all;
+    }
+    .begin_date-m span,.end_date-m span ,.apply_date-m span,.apply_reason-m span{
+        font-weight: 600;
+        color:#888;
+    }
+
+    /*****************部分1:列表部分 end***/
+
+    /****************部分2：分页部分 begin*/
+    /****************部分2：分页部分 end*/
+    /*************************************/
+    /*************手机下的内容展示 end*****/
+
+}
+
+

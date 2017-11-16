@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>医院管理-医院展示</title>
+    <!--(必需)css-bootstrap-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--(必需)css-page-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/css/Home/css_page.css">
+    <!--css-lst-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/css/Home/css_lst.css">
+    <!--css-this-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/css/Doc/Dutytime/css_applyRecordLst.css">
+</head>
+<body>
+
+<!--(必需)网站上方固定不动的标头-->
+<header id="site-nav">
+    <div class="sn-container">
+        <!--网站logo-->
+        <a href="#" class="sn-logo"><img src="__ROOT__/Public/images/logo.png"></a>
+        <!--展示下拉菜单的图标-->
+        <a href="#" class="sn-showmenu"><img src="__ROOT__/Public/images/menu1.png"></a>
+        <!--快速导航菜单-->
+        <div class="sn-quick-menu">
+            <a href="http://{:C('IP_URL')}/HOS/Pat/Treatment/hospitalShow" class="sn-home sn-hover">首页</a>
+            <a href="http://{:C('IP_URL')}/HOS/Pat/Login/login" class="sn-login sn-hover">登录</a>
+            <a href="http://{:C('IP_URL')}/HOS/Sys/Hospital/lst" class="sn-sys sn-hover"></a>
+            <a href="http://{:C('IP_URL')}/HOS/Hos/Module/lst" class="sn-hos sn-hover"></a>
+            <a href="http://{:C('IP_URL')}/HOS/Doc/Dutytime/applyForm" class="sn-doc sn-hover"></a>
+            <a href="http://{:C('IP_URL')}/HOS/Pat/Select/lst" class="sn-pat sn-hover"></a>
+            <a href="#" class="sn-logout sn-hover">退出</a>
+        </div>
+    </div>
+</header>
+
+
+
+<!--平板以及手机下的列表  begin-->
+<div class="info-list-mobile">
+    <a href="http://{:C('IP_URL')}/HOS/Doc/Dutytime/applyForm"><img src="__ROOT__/Public/images/dutytime.png"/><span>坐诊时间管理</span></a>
+    <a href="http://{:C('IP_URL')}/HOS/Doc/Msg/edit" class="middle"><img src="__ROOT__/Public/images/dutymsg.png"/><span>挂号信息管理</span></a>
+    <a href="http://{:C('IP_URL')}/HOS/Doc/Doc/edit"><img src="__ROOT__/Public/images/me.png"/><span>个人管理</span></a>
+</div>
+<!--平板以及手机下的列表  end-->
+
+<!--手机下的内容展示  begin-->
+<div class="info-content-mobile">
+    <!--部分1：列表部分 begin-->
+    <div class="list-container-m">
+        <volist name="stop_schedule_table" id="stop_schedule_row" empty="$empty2">
+            <div class="list-item-m">
+                <span class="doc_name-m">{$stop_schedule_row.doc_name}</span>
+                <span class="week_code-m">
+                    <switch name="stop_schedule_row.week_code" >
+                            <case value="1">周一</case>
+                            <case value="2">周二</case>
+                            <case value="3">周三</case>
+                            <case value="4">周四</case>
+                            <case value="5">周五</case>
+                            <case value="6">周六</case>
+                            <case value="0">周日</case>
+                    </switch>
+                </span>
+                <span class="time_range-m">{$stop_schedule_row.time_range}</span>
+                <span class="stop_status-m">
+                    <switch name="stop_schedule_row.stop_status" >
+                        <case value="1"><span class="status-wait-m">待审核</span></case>
+                        <case value="2"><span class="status-refuse-m">未通过</span></case>
+                        <case value="3"> <span class="status-agree-m">通过</span></case>
+                    </switch>
+                </span>
+                <span class="begin_date-m"><span>开始日期：</span>{$stop_schedule_row.begin_date}</span>
+                <span class="end_date-m"><span>结束日期：</span>{$stop_schedule_row.end_date}</span>
+                <span class="apply_date-m"><span>申请时间：</span>{$stop_schedule_row.apply_date}</span>
+                <span class="refuse_reason-m"><span>拒绝原因：</span>
+                    <empty name="stop_schedule_row.refuse_reason">无</empty>
+                    <notempty name="stop_schedule_row.refuse_reason">{$stop_schedule_row.refuse_reason}</notempty>
+                </span>
+            </div>
+        </volist>
+    </div>
+    <!--部分1：列表部分 end-->
+
+    <!--部分2：分页部分 begin-->
+    <div class="page-list-m">{$page2}</div>
+    <!--部分2：分页部分 end-->
+
+</div>
+<!--手机下的内容展示  end-->
+
+<!--*************************************************************************************-->
+
+<!--信息展示容器-->
+<div id="info-container">
+
+    <!--容器左侧部分(列表)  begin-->
+    <div class="info-list">
+        <a href="http://{:C('IP_URL')}/HOS/Doc/Dutytime/applyForm" class="active"><img src="__ROOT__/Public/images/dutytime.png"/>坐诊时间管理</a>
+        <a href="http://{:C('IP_URL')}/HOS/Doc/Msg/edit"><img src="__ROOT__/Public/images/dutymsg.png"/>挂号信息管理</a>
+        <a href="http://{:C('IP_URL')}/HOS/Doc/Doc/edit"><img src="__ROOT__/Public/images/me.png"/>个人管理</a>
+    </div>
+    <!--容器左侧部分(列表)  end-->
+
+    <!--容器右侧部分（内容展示） begin-->
+    <div class="info-content">
+        <!--右侧1:列表部分 begin-->
+        <div class="list-container">
+            <div class="list-head">
+                <span class="doc_name">专家名字</span>
+                <span class="week_code">时间</span>
+                <span class="time_range">范围</span>
+                <span class="begin_date">开始日期</span>
+                <span class="end_date">结束日期</span>
+                <span class="apply_date">申请时间</span>
+                <span class="refuse_reason">拒绝原因</span>
+                <span class="stop_status">审核状态</span>
+            </div>
+            <volist name="stop_schedule_table" id="stop_schedule_row" empty="$empty">
+                <div class="list-item">
+                    <span class="doc_name">{$stop_schedule_row.doc_name}</span>
+                    <span class="week_code">
+                        <switch name="stop_schedule_row.week_code" >
+                            <case value="1">周一</case>
+                            <case value="2">周二</case>
+                            <case value="3">周三</case>
+                            <case value="4">周四</case>
+                            <case value="5">周五</case>
+                            <case value="6">周六</case>
+                            <case value="0">周日</case>
+                        </switch>
+                    </span>
+                    <span class="time_range">{$stop_schedule_row.time_range}</span>
+                    <span class="begin_date">{$stop_schedule_row.begin_date}</span>
+                    <span class="end_date">{$stop_schedule_row.end_date}</span>
+                    <span class="apply_date">{$stop_schedule_row.apply_date}</span>
+                    <span class="refuse_reason">
+                        <empty name="stop_schedule_row.refuse_reason">无</empty>
+                        <notempty name="stop_schedule_row.refuse_reason">{$stop_schedule_row.refuse_reason}</notempty>
+                    </span>
+                    <span class="stop_status">
+                        <switch name="stop_schedule_row.stop_status" >
+                            <case value="1"><span class="status-wait">待审核</span></case>
+                            <case value="2"><span class="status-refuse">未通过</span></case>
+                            <case value="3"> <span class="status-agree">通过</span></case>
+                        </switch>
+                    </span>
+                </div>
+            </volist>
+        </div>
+        <!--右侧1:列表部分 end-->
+        <!--右侧2:分页部分 begin-->
+        <div class="page-list">{$page}</div>
+        <!--右侧2:分页部分 end-->
+    </div>
+    <!--容器右侧部分（内容展示） end-->
+
+</div>
+
+
+
+<!--(必需)模态框-->
+<div class="modal" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">来自预约平台的提示:</h4>
+            </div>
+            <div class="modal-body">
+                模态弹出窗主体内容
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--(必需)页尾-->
+<footer id="footer">
+    <div class="container">
+        <img src="__ROOT__/Public/images/footer.png">
+        <span>作者:青岛大学2014级开源方向-李艺鸣</span>
+    </div>
+</footer>
+
+
+<!--<div id="bg_test" style="height: 100px;width: 100%;"></div>-->
+
+</body>
+<!--(必需)js-jquery-->
+<script src="__ROOT__/Public/libs/js/jquery-2.2.4.min.js"></script>
+<!--(必需)js-bootstrap-->
+<script src="__ROOT__/Public/libs/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<!--******(必需)js-page begin******-->
+<script>
+    //标头需要ajax请求的地址
+    var headerRequestUrl="http://{:C('IP_URL')}/HOS/Home/Header/showHeaderJSON";
+    //标头中退出按钮中确定按钮请求的地址
+    var logoutRequestUrl="http://{:C('IP_URL')}/HOS/Home/Header/logout";
+    //网站首页（医院展示）的地址
+    var HomeUrl="http://{:C('IP_URL')}/HOS/Pat/Treatment/hospitalShow";
+</script>
+<script src="__ROOT__/Public/libs/js/Home/js_page.js"></script>
+<!--******(必需)js-page end******-->
+<!--js-this-->
+<script src="__ROOT__/Public/libs/js/Doc/Dutytime/js_applyRecordLst.js"></script>
+
+</html>

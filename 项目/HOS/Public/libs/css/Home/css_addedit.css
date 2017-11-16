@@ -1,0 +1,353 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+body{
+    background-color: #f4f6f8;
+}
+
+/********************************************************************/
+/*******************新增|编辑容器     begin********************************/
+#add_container{
+    width:850px;
+    margin: 0 auto;
+    position: relative;
+    top:120px;
+    background-color:#fff;
+    box-shadow: -10px 10px 10px #ededed;
+    border-radius:5px;
+}
+
+/****************部分1:新增|编辑容器中的标题 begin*****************/
+#add_container .add_title{
+    font-size: 26px;
+    letter-spacing:7px;
+    text-align: center;
+    height: 90px;
+    line-height: 30px;
+    padding: 30px 0;
+}
+/****************部分1:新增|编辑容器中的标题 end*****************/
+
+/****************部分2:新增|编辑容器中的输入容器 begin*************/
+/*input输入栏*/
+#add_container .input_container{
+    width:450px;
+    height: 50px;
+    margin: 10px auto;
+    text-align: center;
+    border:1px #ccc solid;
+}
+.disable{
+    background-color: #f2f2f2;
+}
+.input_container:hover{
+    border:3px cadetblue solid;
+    color:cadetblue;
+}
+/*(特殊)装有texterea的input输入栏*/
+.texterea_container{
+    height: 99px !important;
+}
+/*input输入栏中的label*/
+.input_container .input_label{
+    display: block;
+    width:110px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+    font-size: 16px;
+    padding-left: 27px;
+    text-align: left;
+}
+/********input输入栏中右侧自适应的div begin*****/
+.input_container .input_content{
+    margin-left: 110px;
+    height: 49px;
+}
+/*(特殊)装有texterea的input输入栏中右侧自适应的div*/
+.texterea_container .input_content{
+    height: 99px !important;
+}
+.input_content input{
+    width:100%;
+    height: 48px;
+    font-size: 16px;
+    border: none;
+    color:#888;
+}
+.input_content select{
+    width:100%;
+    height: 48px;
+    font-size: 16px;
+    color:#888;
+    border: 1px solid transparent;
+}
+/*(特殊)装有texterea的input输入栏中textarea*/
+.texterea_container textarea{
+    width:100%;
+    height: 97px;
+    font-size: 16px;
+    color:#888;
+    border:none;
+    padding: 13px 0;
+    padding-right: 20px;
+}
+/********input输入栏中右侧自适应的div end*****/
+/****************部分2:新增|编辑容器中的输入容器 end*************/
+
+/****************部分3:新增|编辑容器中的错误区域 begin************/
+#add_container .error{
+    width:450px;
+    height: 20px;
+    margin: 0 auto;
+    color:#ef7662;
+    font-size: 13px;
+}
+/****************部分3:新增|编辑容器中的错误区域 end*************/
+
+/****************部分4:新增|编辑容器中的按钮容器 begin*************/
+#add_container .btn-container{
+    width:450px;
+    height: 95px;
+    text-align: center;
+    padding-top:10px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+}
+.btn-reset,.btn-submit{
+    width:210px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    border:none;
+    transition:background-color 0.4s ease;
+}
+/*重置按钮*/
+.btn-reset{
+    border:none;
+    background-color: #ededed;
+    color:#666;
+    letter-spacing: 5px;
+    float: left;
+}
+.btn-reset:hover{
+    background-color: #dddddd;
+    color:#666;
+    text-decoration: none;
+}
+.btn-reset img{
+    width:25px;
+    height: 25px;
+    position: relative;
+    left:-15px;
+    top:-4px;
+}
+.btn-reset span{
+    position: relative;
+    top:-2px;
+}
+/*提交按钮*/
+.btn-submit{
+    background-color:#3DAFA7 ;
+    color:#fff;
+    letter-spacing: 5px;
+    float:right;
+}
+.btn-submit:hover{
+    background-color:cadetblue ;
+    color:#fff;
+    text-decoration: none;
+}
+.btn-submit img{
+    width:20px;
+    height: 20px;
+    position: relative;
+    left:-15px;
+    top:-3px;
+}
+.btn-submit span{
+    position: relative;
+    top:-2px;
+}
+/*搜索栏中的按钮容器  end*****/
+/****************部分4:新增|编辑容器中的按钮容器 end*************/
+
+/********************************************************************/
+/*******************新增|编辑容器     end********************************/
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /********************************************************************/
+    /*******************新增|编辑容器     begin********************************/
+    #add_container{
+        width:800px;
+    }
+    /********************************************************************/
+    /*******************新增|编辑容器     end********************************/
+}
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+    /********************************************************************/
+    /*******************新增|编辑容器     begin********************************/
+    #add_container{
+        width:680px;
+    }
+    /********************************************************************/
+    /*******************新增|编辑容器     end********************************/
+
+}
+
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /********************************************************************/
+    /*******************新增|编辑容器     begin********************************/
+    #add_container{
+        width:100%;
+        position: relative;
+        top:110px;
+        border-radius:0px;
+    }
+
+    /****************部分1:新增|编辑容器中的标题 begin*****************/
+    #add_container .add_title{
+        font-size: 20px;
+        letter-spacing:5px;
+        height: 50px;
+        padding: 10px 0;
+    }
+    /****************部分1:新增|编辑容器中的标题 end*****************/
+
+    /****************部分2:新增|编辑容器中的输入容器 begin*************/
+    /*input输入栏*/
+    #add_container .input_container{
+        width: 95%;
+        margin: 10px auto;
+        height: 45px;
+        border:1px grey solid;
+        border-radius: 20px;
+    }
+    /*input输入栏中的label*/
+    .input_container .input_label{
+        display:none;
+    }
+    /********input输入栏中右侧自适应的div begin*****/
+    .input_container .input_content{
+        margin-left: 0px;
+        padding-left: 20px;
+        height: 43px;
+        border-radius: 20px;
+    }
+    .input_content input{
+        height: 43px;
+        border-radius: 20px;
+    }
+    .input_content select{
+        height: 43px;
+        border: 1px solid transparent;
+        border-radius: 20px;
+    }
+    /*(特殊)装有texterea的input输入栏中textarea*/
+    .texterea_container textarea{
+        border-radius: 20px;
+    }
+    /********input输入栏中右侧自适应的div end*****/
+    /****************部分2:新增|编辑容器中的输入容器 end*************/
+
+    /****************部分3:新增|编辑容器中的错误区域 begin************/
+    #add_container .error{
+        width:95%;
+        height: 20px;
+        margin: 0 auto;
+        padding-left: 25px;
+    }
+    /****************部分3:新增|编辑容器中的错误区域 end*************/
+
+    /****************部分4:新增|编辑容器中的按钮容器 begin*************/
+    #add_container .btn-container{
+        width:95%;
+        height: 95px;
+        text-align: center;
+        padding-top:10px;
+        padding-bottom: 40px;
+        margin: 0 auto;
+    }
+    .btn-reset,.btn-submit{
+        width:48%;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 7px;
+        font-size: 14px;
+        font-weight: 600;
+        border:none;
+    }
+    /*重置按钮*/
+    .btn-reset{
+        border:none;
+        background-color: #ededed;
+        color:#666;
+        letter-spacing: 5px;
+        float: left;
+    }
+    .btn-reset:hover{
+        background-color: #dddddd;
+        color:#666;
+        text-decoration: none;
+    }
+    .btn-reset img{
+        width:25px;
+        height: 25px;
+        position: relative;
+        left:-15px;
+        top:-4px;
+    }
+    .btn-reset span{
+        position: relative;
+        top:-2px;
+    }
+    /*提交按钮*/
+    .btn-submit{
+        background-color:#3DAFA7 ;
+        color:#fff;
+        letter-spacing: 5px;
+        float:right;
+    }
+    .btn-submit:hover{
+        background-color:cadetblue ;
+        color:#fff;
+        text-decoration: none;
+    }
+    .btn-submit img{
+        width:20px;
+        height: 20px;
+        position: relative;
+        left:-15px;
+        top:-3px;
+    }
+    .btn-submit span{
+        position: relative;
+        top:-2px;
+    }
+    /*搜索栏中的按钮容器  end*****/
+    /****************部分4:新增|编辑容器中的按钮容器 end*************/
+
+    /********************************************************************/
+    /*******************新增|编辑容器     end********************************/
+}
+
+

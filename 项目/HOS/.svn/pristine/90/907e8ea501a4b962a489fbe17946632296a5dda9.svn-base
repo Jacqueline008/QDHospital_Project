@@ -1,0 +1,60 @@
+<?php
+namespace Hos\Controller;
+use Think\Controller;
+class HosmsgController extends Controller {
+
+    public function edit(){
+        //获取当前医院管理员的名字
+        $userName=session("userName");
+
+        //获取当前医院管理员所管理的医院信息
+        $hospital_model=M("Hospital");
+        $hospital_row=$hospital_model->join("hos_admin on hospital.hos_code=hos_admin.hos_code")->where("hos_admin.hosadmin_name='".$userName."'")->find();
+        //将该医院信息传给视图层
+        $this->assign("hospital_row",$hospital_row);
+
+        if(IS_POST){
+
+            //获取传入的addr,msg,tel
+            $editData["addr"]=I("post.addr");
+            $editData["msg"]=I("post.msg");
+            $editData["tel"]=I("post.tel");
+
+            if($_FILES["pic"]["name"]==""){
+                //没有文件上传
+            }else{
+                //有文件上传
+                //文件上传
+                $upload=new \Think\Upload();
+                $upload->maxSize=3145728;
+                $upload->exts=array("jpg","gif","png","jpeg");
+                $upload->rootPath = "./";
+                $upload->savePath="./Public/Uploads/";
+                $upload->replace=true;
+                $upload->autoSub=false;
+
+                $info=$upload->uploadOne($_FILES["pic"]);
+                //获取文章上传后的永久保存路径
+                $editData["pic"]="/Hos/Public/Uploads/".$info["savename"];
+            }
+
+            //获取当前登录的医院管理员所管辖的hos_code
+            $hos_admin_model=M("HosAdmin");
+            $hos_code=$hos_admin_model->where("hosadmin_name='".$userName."'")->getField("hos_code");
+            $editData["hos_code"]=$hos_code;
+
+            //向hospital中插入数据（自动验证）
+            $editModel=D("hospital");
+            if(!$editModel->create($editData)){
+                //准备插入的数据不符合自动验证的规则,输入错误提示
+                $this->error($editModel->getError());
+            }else{
+                $editModel->save();
+            }
+
+        }
+
+        $this->display();
+    }
+
+}

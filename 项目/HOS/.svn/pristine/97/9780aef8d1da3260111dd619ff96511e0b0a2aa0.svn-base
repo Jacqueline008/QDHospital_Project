@@ -1,0 +1,10 @@
+<?php
+namespace Pat\Controller;
+use Think\Controller;
+class TreatmentController extends Controller {
+    public function hospitalShow(){
+        $this->assign();
+        $this->display();
+    }
+}
+?>

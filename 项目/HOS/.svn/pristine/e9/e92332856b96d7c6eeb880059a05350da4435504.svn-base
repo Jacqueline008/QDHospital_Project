@@ -1,0 +1,10 @@
+<?php
+namespace Doc\Controller;
+use Think\Controller;
+class DutytimeController extends Controller {
+
+    public function applyForm(){
+        $this->display();
+    }
+
+}

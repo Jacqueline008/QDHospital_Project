@@ -1,0 +1,370 @@
+[ 2017-11-14T15:03:03+08:00 ] ::1 /HOS/Hos/Duty/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000671s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001368s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001433s ]
+SQL: SHOW COLUMNS FROM `hospital` [ RunTime:0.0063s ]
+SQL: SELECT hospital.hos_code FROM `hospital` INNER JOIN hos_admin on hospital.hos_code=hos_admin.hos_code  WHERE ( hos_admin.hosadmin_name='HA001' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `department` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `department` WHERE ( hos_code='QH001' )  [ RunTime:0.0006s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  [ RunTime:0.0004s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  [ RunTime:0.0005s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  limit 0,3 [ RunTime:0.0005s ]
+SQL: select * from duty_schedule where doc_code='QH001D001' [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+SQL: select * from duty_schedule where doc_code='QH001D002' [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+SQL: select * from duty_schedule where doc_code='QH001D003' [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000183s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041025s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001214s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001898s ]
+
+[ 2017-11-14T15:03:05+08:00 ] ::1 /HOS/Hos/Duty/edit/dut_code/3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
+SQL: SHOW COLUMNS FROM `duty_schedule` [ RunTime:0.0070s ]
+SQL: SELECT `dut_status` FROM `duty_schedule` WHERE ( dut_code='3' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `duty_schedule` SET `dut_status`='1' WHERE `dut_code` = 3 [ RunTime:0.0663s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003856s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003977s ]
+
+[ 2017-11-14T15:03:06+08:00 ] ::1 /HOS/Hos/Duty/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000551s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000997s ]
+SQL: SHOW COLUMNS FROM `hospital` [ RunTime:0.0058s ]
+SQL: SELECT hospital.hos_code FROM `hospital` INNER JOIN hos_admin on hospital.hos_code=hos_admin.hos_code  WHERE ( hos_admin.hosadmin_name='HA001' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `department` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `department` WHERE ( hos_code='QH001' )  [ RunTime:0.0005s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  [ RunTime:0.0004s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  [ RunTime:0.0005s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  limit 0,3 [ RunTime:0.0004s ]
+SQL: select * from duty_schedule where doc_code='QH001D001' [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+SQL: select * from duty_schedule where doc_code='QH001D002' [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+SQL: select * from duty_schedule where doc_code='QH001D003' [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000184s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000239s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036405s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036458s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001012s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001051s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001709s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001783s ]
+
+[ 2017-11-14T15:03:06+08:00 ] ::1 /HOS/Hos/Duty/edit/dut_code/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001765s ]
+SQL: SHOW COLUMNS FROM `duty_schedule` [ RunTime:0.0078s ]
+SQL: SELECT `dut_status` FROM `duty_schedule` WHERE ( dut_code='4' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `duty_schedule` SET `dut_status`='1' WHERE `dut_code` = 4 [ RunTime:0.0056s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001856s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001914s ]
+
+[ 2017-11-14T15:03:07+08:00 ] ::1 /HOS/Hos/Duty/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000850s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001805s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001889s ]
+SQL: SHOW COLUMNS FROM `hospital` [ RunTime:0.0062s ]
+SQL: SELECT hospital.hos_code FROM `hospital` INNER JOIN hos_admin on hospital.hos_code=hos_admin.hos_code  WHERE ( hos_admin.hosadmin_name='HA001' ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `department` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `department` WHERE ( hos_code='QH001' )  [ RunTime:0.0004s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  [ RunTime:0.0004s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  [ RunTime:0.0003s ]
+SQL: select * from doctor join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code where department.hos_code='QH001'  limit 0,3 [ RunTime:0.0003s ]
+SQL: select * from duty_schedule where doc_code='QH001D001' [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+SQL: select * from duty_schedule where doc_code='QH001D002' [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+SQL: select * from duty_schedule where doc_code='QH001D003' [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+NOTIC: [8] Use of undefined constant dut_code - assumed 'dut_code' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 108 行.
+NOTIC: [8] Use of undefined constant dut_status - assumed 'dut_status' D:\Xampp\xampp\htdocs\HOS\Application\Hos\Controller\DutyController.class.php 第 109 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000247s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.038729s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038779s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000882s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001069s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001112s ]
+

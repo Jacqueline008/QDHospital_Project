@@ -1,0 +1,19 @@
+<?php
+return array(
+	//'配置项'=>'配置值'
+
+    'IP_URL'=>'182.254.152.14',//网站的url（localhost/固定ip）
+    'SYSADMIN_NAME'=>'admin', //系统管理员的用户名
+    'SYSADMIN_PWD'=>'123',//系统管理员的密码
+    'BREAK_TIMES'=>'3',//患者可以违约的次数
+
+    //数据库配置
+    'DB_TYPE'=>'mysql',
+    'DB_HOST'=>'localhost',
+    'DB_NAME'=>'hosdb',
+    'DB_USER'=>'root',
+    'DB_PWD'=>'',
+    'DB_PORT'=>'3306',
+    'DB_PREFIX'=> '',    // 数据库表前缀
+
+);

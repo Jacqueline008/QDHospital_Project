@@ -1,0 +1,11 @@
+<?php
+
+function checkFixedLength($str,$fixedlength){
+    if(strlen($str)!=$fixedlength){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+?>

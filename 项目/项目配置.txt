@@ -1,0 +1,63 @@
+在服务器中配置了可以省略不写index.php的参数
+在my.ini [mysqld] event_schedule=ON 定时任务
+
+1.Home\HeaderController\showHeaderJSON() 跨域 返回json
+2.Sys\AdminloginController\login()跨域 返回text
+3.Pat\LoginController\login() 跨域 返回text
+4.Home\HeaderController\logout() 跨域 返回text
+5.Sys\Hospital\add 跨域 返回text
+6.Sys\Hospital\edit 跨域 返回text
+7.Sys\Hosadmin\add 跨域 返回text
+8.Sys\Set\getDictionary跨域 返回json
+9.Sys\Set\add 跨域 返回text
+10.Sys\Set\edit 跨域 返回text
+11.Hos\Dep\add 跨域 返回text
+12.Hos\Dep\edit 跨域 返回text
+13.Hos\Doctor\add 跨域 返回text
+14.Hos\Doctor\edit 跨域 返回text
+15.Doc\Dutytime\applyForm 返回text
+16.Hos\Duty\edit 跨域 返回text
+17.Hos\Duty\applyRecordLst 跨域 返回text
+18.Pat\Pat\edit 跨域 返回text
+19.Pat\Treatment\dutyShowEdit 跨域 返回text
+20.Pat\Treatment\treatmentShowEdit 跨域 返回text
+21.Doc\Msg\edit  跨域 返回text
+
+
+delimiter |
+create trigger doctor_trigger after insert on doctor for each ROW
+begin 
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,1,'上午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,1,'下午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,2,'上午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,2,'下午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,3,'上午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,3,'下午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,4,'上午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,4,'下午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,5,'上午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,5,'下午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,6,'上午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,6,'下午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,7,'上午',0);
+insert into duty_schedule(doc_code,week_code,time_range,dut_status) 
+values(new.doc_code,7,'下午',0);
+end;
+|
+delimiter ;
+
+
+

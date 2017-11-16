@@ -1,0 +1,210 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+
+body{
+    background-color: #F4F6F8;
+}
+
+/*********************详细信息展示容器 begin***********************************/
+#info_container{
+    width:970px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+    top:120px;
+}
+.inner-container{
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+.doc_pic{
+    width:150px;
+    height: 200px;
+    float: left;
+}
+.doc_name {
+    padding-left: 230px;
+    font-size: 24px;
+    font-weight:600;
+    color:#666;
+}
+.mix1{
+    width: 100%;
+    height: 45px;
+    margin-top: 15px;
+}
+.dep_name{
+    background-color: #CBF0BA;
+    color:#3DAFA7;
+    float: left;
+    width:100px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 80px;
+    margin-top: 10px;
+}
+.doclevel_name{
+    background-color:#FDE8C9 ;
+    color:#E87404;
+    float: left;
+    width:100px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.hos_name{
+    padding-left: 230px;
+    font-size: 18px;
+    margin-top: 25px;
+}
+.mix2{
+    width: 100%;
+    height: 45px;
+    margin-top: 15px;
+}
+.doc_sex{
+    float: left;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 80px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+.doc_age{
+    float: left;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 18px;
+}
+.doc_area{
+    clear:both;
+    font-size: 18px;
+    margin-top: 20px;
+    line-height: 35px;
+}
+/*********************详细信息展示容器 end***********************************/
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+    /*********************详细信息展示容器 begin***********************************/
+    #info_container{
+        width:750px;
+    }
+    /*********************详细信息展示容器 end***********************************/
+}
+
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /*********************详细信息展示容器 begin***********************************/
+    #info_container{
+        width:100%;
+        top:80px;
+        padding: 0 5px;
+    }
+    .inner-container{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding-top: 40px;
+    }
+    .doc_pic{
+        width:150px;
+        height: 200px;
+        float: left;
+    }
+    .doc_name {
+        padding-left: 165px;
+        font-size: 20px;
+        font-weight:600;
+        color:#666;
+    }
+    .mix1{
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+    }
+    .dep_name{
+        background-color: #CBF0BA;
+        color:#3DAFA7;
+        float: left;
+        width:70px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+    .doclevel_name{
+        background-color:#FDE8C9 ;
+        color:#E87404;
+        float: left;
+        width:70px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    .hos_name{
+        padding-left: 165px;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .mix2{
+        width: 100%;
+        height: 45px;
+        margin-top: 15px;
+    }
+    .doc_sex{
+        float: left;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        margin-left: 15px;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    .doc_age{
+        float: left;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        margin-left: 30px;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+    .doc_area{
+        clear:both;
+        font-size: 16px;
+        margin-top: 20px;
+        line-height: 35px;
+    }
+    /*********************详细信息展示容器 end***********************************/
+
+}
+
+

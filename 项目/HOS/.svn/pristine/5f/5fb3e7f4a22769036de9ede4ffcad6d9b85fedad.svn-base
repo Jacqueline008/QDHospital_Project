@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>预约挂号-科室展示</title>
+    <!--(必需)css-bootstrap-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <!--(必需)css-page-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/css/Home/css_page.css">
+    <!--css-this-->
+    <link rel="stylesheet" href="__ROOT__/Public/libs/css/Pat/Treatment/css_departmentShow.css">
+</head>
+<body>
+
+<!--(必需)网站上方固定不动的标头-->
+<header id="site-nav">
+    <div class="sn-container">
+        <!--网站logo-->
+        <a href="#" class="sn-logo"><img src="__ROOT__/Public/images/logo.png"></a>
+        <!--展示下拉菜单的图标-->
+        <a href="#" class="sn-showmenu"><img src="__ROOT__/Public/images/menu1.png"></a>
+        <!--快速导航菜单-->
+        <div class="sn-quick-menu">
+            <a href="#" class="sn-home sn-hover">首页</a>
+            <a href="#" class="sn-login sn-hover">登录</a>
+            <a href="#" class="sn-sys sn-hover"></a>
+            <a href="#" class="sn-hos sn-hover"></a>
+            <a href="#" class="sn-doc sn-hover"></a>
+            <a href="#" class="sn-pat sn-hover"></a>
+            <a href="#" class="sn-logout sn-hover">退出</a>
+        </div>
+    </div>
+</header>
+
+<!--医院信息展示容器-->
+<div id="hosinfo-container">
+    <div class="hosinfo-up">
+        <span class="hos_name">青岛大学附属医院</span>
+        <span class="hoslevel_name">三级甲等</span>
+        <span class="cant_name">市南区</span>
+    </div>
+    <div class="hosinfo-down">
+        <img src="__ROOT__/Public/images/default-hospital.png">
+        <div class="mix-container">
+            <div class="tel">电话：18978999</div>
+            <div class="addr">地址：嘻嘻嘻嘻</div>
+            <div class="msg">简介：附属医院始建于1898年，是山东省东部地区唯一的一所省属综合性教学医院。目前，医院本部占地6万平方米，东区占地7万平方米，总建筑面积达20万平方米，资产总额达20.6亿元，开放总床位1995张，职工2600余人,其中高级专业技术人员550余名，博士240余名，硕士500余名，留学归国人员近百名，国家、省市各级各类专业委员会主委、副主委、卫生部有突出贡献中青年专家、享受政府特贴专家、山东省"1020"人才工程等专家近200名。医院年门急诊量157万人次，出院5.3万人次，手术2.3万例，是科室齐全、设备先进、技术雄厚、环境优雅、建筑布局合理，集医疗、教学、科 学、科研、预防保健和康复为一体的区域龙头医院，是山东省东部地区医疗、教学、科研和人才培训中心。</div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--(必需)模态框-->
+<div class="modal" id="mymodal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">来自预约平台的提示:</h4>
+            </div>
+            <div class="modal-body">
+                模态弹出窗主体内容
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--(必需)页尾-->
+<footer id="footer">
+    <div class="container">
+        <img src="__ROOT__/Public/images/footer.png">
+        <span>作者:青岛大学2014级开源方向-李艺鸣</span>
+    </div>
+</footer>
+
+
+<div id="bg_test" style="height: 100px;width: 100%;"></div>
+
+</body>
+<!--(必需)js-jquery-->
+<script src="__ROOT__/Public/libs/js/jquery-2.2.4.min.js"></script>
+<!--(必需)js-bootstrap-->
+<script src="__ROOT__/Public/libs/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<!--******(必需)js-page begin******-->
+<script>
+    //标头需要ajax请求的地址
+    var headerRequestUrl="http://{:C('IP_URL')}/HOS/Home/Header/showHeaderJSON";
+    //标头中退出按钮中确定按钮请求的地址
+    var logoutRequestUrl="http://{:C('IP_URL')}/HOS/Home/Header/logout";
+    //网站首页（医院展示）的地址
+    var HomeUrl="http://{:C('IP_URL')}/HOS/Pat/Treatment/hospitalShow";
+</script>
+<script src="__ROOT__/Public/libs/js/Home/js_page.js"></script>
+<!--******(必需)js-page end******-->
+<!--js-this-->
+<script src="__ROOT__/Public/libs/js/Pat/Treatment/js_departmentShow.js"></script>
+
+</html>

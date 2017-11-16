@@ -1,0 +1,31 @@
+<?php
+
+//echo date("Y-m-d",strtotime("+1 days"));
+//echo "<br>";
+//echo date("Y-m-d",strtotime("+2 days"));
+//echo "<br>";
+//echo date("Y-m-d",strtotime("+3 days"));
+//echo "<br>";
+//echo date("Y-m-d",strtotime("+4 days"));
+//echo "<br>";
+//echo date("Y-m-d",strtotime("+5 days"));
+//echo "<br>";
+//echo date("Y-m-d",strtotime("+6 days"));
+//echo "<br>";
+//echo date("Y-m-d",strtotime("+7 days"));
+//echo "<br>";
+
+$week_array=array();
+for($i=1;$i<=7;$i++){
+    $week_item_array=array();
+    $date=date("Y-m-d",strtotime("+".$i." days"));
+    $day=date("w",strtotime("+".$i." days"));
+    $week_item_array["date"]=$date;
+    $week_item_array["day"]=$day;
+
+    array_push($week_array,$week_item_array);
+}
+
+print_r($week_array);
+
+?>

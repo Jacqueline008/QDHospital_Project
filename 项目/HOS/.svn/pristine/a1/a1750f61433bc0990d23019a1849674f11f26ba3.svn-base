@@ -1,0 +1,24 @@
+[ 2017-10-25T09:31:31+08:00 ] ::1 /phpStorm_Project/HOS/Hos/Hosmsg/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000496s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000534s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::assign(), called in D:\Xampp\xampp\htdocs\phpStorm_Project\HOS\Application\Hos\Controller\HosmsgController.class.php on line 6 and defined D:\Xampp\xampp\htdocs\phpStorm_Project\HOS\ThinkPHP\Library\Think\Controller.class.php 第 121 行.
+NOTIC: [8] Undefined variable: name D:\Xampp\xampp\htdocs\phpStorm_Project\HOS\ThinkPHP\Library\Think\Controller.class.php 第 122 行.
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in D:\Xampp\xampp\htdocs\phpStorm_Project\HOS\Application\Hos\Controller\HosmsgController.class.php on line 7 and defined D:\Xampp\xampp\htdocs\phpStorm_Project\HOS\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content D:\Xampp\xampp\htdocs\phpStorm_Project\HOS\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000056s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007727s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007782s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000328s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000360s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
+

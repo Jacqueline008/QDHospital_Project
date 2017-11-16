@@ -1,0 +1,58 @@
+<?php
+namespace Doc\Controller;
+use Think\Controller;
+class DutytimeController extends Controller {
+
+    public function applyForm(){
+        //新增成功返回1，失败返回验证失败原因
+        //指定该PHP返回的数据为text无格式正文
+        header("Content-Type: text/plain;charset=utf-8");
+        //解决跨域问题
+        header("Access-Control-Allow-Origin:*");
+        header("Access-Control-Allow-Methods:POST,GET");
+
+        if(IS_POST){
+            //获取
+            $doc_code=session("userName");
+            $week_code=I("post.week_code");
+            $time_range=I("post.time_range");
+
+            $begin_date=I("post.begin_date");
+            $end_date=I("post.end_date");
+            $apply_reason=I("post.apply_reason");
+
+            //依据$doc_code,$week_code,$time_range获取值班代码
+            $duty_schedult_Model=M("DutySchedule");
+            $dut_code=$duty_schedult_Model->where("doc_code='".$doc_code."' and week_code='".$week_code."' and time_range='".$time_range."' ")->getField("dut_code");
+
+            //准备好要插入的数据
+            $addData["dut_code"]=$dut_code;
+            $addData["begin_date"]=$begin_date;
+            $addData["end_date"]=$end_date;
+            date_default_timezone_set("Asia/Shanghai");
+            $addData["apply_date"]=date("Y-m-d H:i:s");
+            $addData["apply_reason"]=$apply_reason;
+
+
+            //向stop_schedule中插入数据（自动验证）
+            $addModel=D("StopSchedule");
+            if(!$addModel->create($addData)){
+                //准备插入的数据不符合自动验证的规则,输入错误提示
+                echo ($addModel->getError());
+                return;
+            }else{
+                $addModel->add();
+                echo 1;
+                return;
+            }
+        }
+
+        //获取当前专家代码
+        $doc_code=session("userName");
+        //将登录的专家代码传入视图层
+        $this->assign("doc_code",$doc_code);
+
+        $this->display();
+    }
+
+}

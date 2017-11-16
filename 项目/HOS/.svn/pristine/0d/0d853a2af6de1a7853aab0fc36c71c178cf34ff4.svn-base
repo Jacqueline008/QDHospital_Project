@@ -1,0 +1,246 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+body{
+    background-color: #fff;
+}
+
+/************************************/
+/***************平板以及手机下的列表****/
+.info-list-mobile{
+    display: none;
+}
+
+
+
+/***********************************************************************/
+/*******************信息展示容器     begin********************************/
+/*总容器*/
+#info-container{
+    width:1170px;
+    height: 820px;
+}
+/****************容器左侧部分(列表)******************/
+
+/****************容器右侧部分(内容展示)  begin*******/
+.info-content{
+    width:970px;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+/***************************************/
+/*******************新增|编辑容器  begin**/
+#add_container{
+    width:850px;
+    top:0px;
+    background-color:#fff;
+    box-shadow: 0px 0px 20px #ededed;
+}
+
+/****部分1:新增|编辑容器中的标题 begin*****/
+/****部分1:新增|编辑容器中的标题 end*****/
+
+/***部分2:新增|编辑容器中的输入容器 begin****/
+
+/*自定义-混合信息容器*/
+.mix_container{
+    height: 130px !important;
+    border:none !important;
+    color:#888;
+    font-size:16px;
+}
+.mix_container:hover{
+    color:#888;
+}
+/*自定义*/
+.mix_container img{
+    width:170px;
+    height: 130px;
+    float: left;
+}
+
+/*自定义*/
+.mix_container .hos_code{
+    height: 50px;
+}
+/*自定义*/
+.mix_container .hos_code .null{
+    width:30px;
+    height: 50px;
+    background-color: #fff;
+    float:left;
+}
+/*自定义*/
+.mix_container .hos_code .content{
+    height: 50px;
+    background-color: #ededed;
+    padding-left: 200px;
+    line-height: 50px;
+}
+
+/*自定义*/
+.mix_container .upload{
+    height: 50px;
+    margin-top: 30px;
+}
+/*自定义*/
+.mix_container .upload .null{
+    width:30px;
+    height: 50px;
+    background-color: #fff;
+    float:left;
+}
+/*自定义*/
+.mix_container .upload .content{
+    height: 50px;
+    background-color: #f4f6f8;
+    padding-left: 200px;
+    line-height: 50px;
+    font-weight: 600;
+    transition:background-color 0.4s ease;
+}
+.mix_container .upload .content:hover{
+    background-color: #ededed;
+}
+/*自定义*/
+.mix_container .upload .content input{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: relative;
+    top:-50px;
+}
+/***部分2:新增|编辑容器中的输入容器 end****/
+
+/****部分3:新增|编辑容器中的错误区域 begin******/
+/****部分3:新增|编辑容器中的错误区域 end******/
+
+/****部分4:新增|编辑容器中的按钮容器 begin****/
+/****部分4:新增|编辑容器中的按钮容器 end****/
+
+/***************************************/
+/*******************新增|编辑容器  begin**/
+
+/****************容器右侧部分(内容展示)  end*******/
+
+/***********************************************************************/
+/*******************信息展示容器     end********************************/
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    /*总容器*/
+    #info-container{
+        width:970px;
+    }
+    /****************容器左侧部分(列表)******************/
+
+    /****************容器右侧部分(内容展示)  begin*******/
+    .info-content{
+        width:820px;
+    }
+    #add_container{
+        width:800px;
+    }
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+}
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    /*总容器*/
+    #info-container{
+        width:750px;
+    }
+    /****************容器左侧部分(列表)******************/
+    .info-list{
+        display: none;
+    }
+    /****************容器右侧部分(内容展示)  begin*******/
+    .info-content{
+        width:750px;
+    }
+    #add_container{
+        width:680px;
+    }
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+
+
+    /******************************************/
+    /***************平板以及手机下的列表 begin****/
+    .info-list-mobile{
+        display: block;
+    }
+    /******************************************/
+    /***************平板以及手机下的列表 end****/
+
+}
+
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    /*自定义*/
+    #info-container{
+        width:100%;
+        height: 770px;
+        display: block;
+    }
+    /****************容器左侧部分(列表)******************/
+    /****************容器右侧部分(内容展示)  begin*******/
+    /*自定义*/
+    .info-content{
+        width:100%;
+    }
+    #add_container{
+        width:100%;
+        top:0px;
+    }
+    /*自定义*/
+    .mix_container .hos_code .null{
+        width:10px;
+    }
+    /*自定义*/
+    .mix_container .hos_code .content{
+        padding-left: 180px;
+    }
+
+
+    /*自定义*/
+    .mix_container .upload .null{
+        width:10px;
+    }
+    /*自定义*/
+    .mix_container .upload .content{
+        padding-left: 180px;
+    }
+
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+
+
+
+
+}
+
+

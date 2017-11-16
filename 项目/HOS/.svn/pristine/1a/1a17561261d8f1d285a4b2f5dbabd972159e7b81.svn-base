@@ -1,0 +1,119 @@
+<?php
+namespace Pat\Controller;
+use Think\Controller;
+class TreatmentController extends Controller {
+    public function hospitalShow(){
+        //获取行政区划表的内容
+        $cant_Model=M("cant");
+        $cant_table=$cant_Model->select();
+        //将行政区划表的内容传入视图层
+        $this->assign("cant_table",$cant_table);
+
+        //获取医院级别表的内容
+        $hos_level_Model=M("hos_level");
+        $hos_level_table=$hos_level_Model->select();
+        //将医院级别表的内容传入视图层
+        $this->assign("hos_level_table",$hos_level_table);
+
+        //若用户没有GET,根据固定sql语句来查询hospital表
+        $sql="select *,substring(msg,1,170) as big_msg,substring(msg,1,50) as small_msg from hospital join cant on hospital.cant_code=cant.cant_code join hos_level on hospital.hoslevel_code=hos_level.hoslevel_code ";
+        //若用户GET,根据拼接sql语句来查询hospital表
+        if(isset($_GET)){
+            //根据用户传入的医院代码/名称，行政区划，医院级别来拼接sql语句。
+            if(isset($_GET["hos_name"])){
+                if(I("get.cant_code")!=="null"){
+                    if(I("get.hoslevel_code")!=="null"){
+                        $sql=$sql."where hospital.hos_name='".I("get.hos_name")."' and cant.cant_code='".I("get.cant_code")."' and hos_level.hoslevel_code='".I("get.hoslevel_code")."'";
+                    }else{
+                        $sql=$sql."where hospital.hos_name='".I("get.hos_name")."' and cant.cant_code='".I("get.cant_code")."'";
+                    }
+                }else{
+                    if(I("get.hoslevel_code")!=="null"){
+                        $sql=$sql."where hospital.hos_name='".I("get.hos_name")."' and hos_level.hoslevel_code='".I("get.hoslevel_code")."'";
+                    }else{
+                        $sql=$sql."where hospital.hos_name='".I("get.hos_name")."'";
+                    }
+                }
+            }else{
+                if(I("get.cant_code")!=="null"){
+                    if(I("get.hoslevel_code")!=="null"){
+                        if(I("get.cant_code")==="" && I("get.hoslevel_code")===""){
+                            $sql=$sql;
+                        }else{
+                            $sql=$sql."where cant.cant_code='".I("get.cant_code")."' and hos_level.hoslevel_code='".I("get.hoslevel_code")."'";
+                        }
+                    }else{
+                        $sql=$sql."where cant.cant_code='".I("get.cant_code")."'";
+                    }
+                }else{
+                    if(I("get.hoslevel_code")!=="null"){
+                        $sql=$sql."where hos_level.hoslevel_code='".I("get.hoslevel_code")."'";
+                    }else{
+                        $sql=$sql;
+                    }
+                }
+            }
+        }
+        $sql=$sql." order by hospital.hos_code ";
+
+        //分页展示
+        //1.统计满足条件的医院表的行数
+        $hospital_Model=new \Think\Model();
+        $hospital_table=$hospital_Model->query($sql);
+        $count=count($hospital_table);
+        //2.配置每页显示的数据条数
+        $Page=new \Think\Page($count,5);
+        //3.配置分页样式
+        $Page -> setConfig('first','首页');
+        $Page -> setConfig('prev','<<');
+        $Page -> setConfig('link','indexpagenumb');//pagenumb 会替换成页码
+        $Page -> setConfig('next','>>');
+        $Page -> setConfig('last','尾页');
+        $Page -> lastSuffix = false;//最后一页不显示为总页数
+        $Page -> setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%');
+        //4.分页显示输出
+        $show=$Page->show();
+        $this->assign("page",$show);
+
+
+        //分页展示-移动端
+        //1.统计满足条件的医院表的行数
+        $hospital_Model=new \Think\Model();
+        $hospital_table=$hospital_Model->query($sql);
+        $count=count($hospital_table);
+        //2.配置每页显示的数据条数
+        $Page2=new \Think\Page($count,5);
+        //3.配置分页样式
+        $Page2 -> setConfig('first','首页');
+        $Page2 -> setConfig('prev','上一页');
+        $Page2 -> setConfig('link','indexpagenumb');//pagenumb 会替换成页码
+        $Page2 -> setConfig('next','下一页');
+        $Page2 -> setConfig('last','尾页');
+        $Page2 -> lastSuffix = false;//最后一页不显示为总页数
+        $Page2 -> setConfig('theme','%FIRST% %UP_PAGE% %DOWN_PAGE% %END%');
+        //4.分页显示输出
+        $show2=$Page2->show();
+        $this->assign("page2",$show2);
+
+        //获取符合条件的医院表中分页的第一页
+        $sql=$sql." limit ".$Page->firstRow.",".$Page->listRows."";
+        $hospital_Model=new \Think\Model();
+        $hospital_table=$hospital_Model->query($sql);
+        //将医院表的内容传入视图层
+        $this->assign("hospital_table",$hospital_table);
+
+
+        //查询结果没有时显示的div
+        $this->assign("empty",'<div class="noContent" style="text-align: center;margin-top: 50px;"><img src="/HOS/Public/images/noContent.png" style="width: 200px;height: 150px;"><span style="display: block;color:#555;font-size: 16px;margin-top: 20px;">抱歉,没有符合条件的搜索结果</span></div>');
+        //查询结果没有时显示的div--移动端
+        $this->assign("empty2",'<div class="noContent" style="text-align: center;margin-top: 50px;"><img src="/HOS/Public/images/noContent.png" style="width: 130px;height: 105px;"><span style="display: block;color:#555;font-size: 14px;margin-top: 20px;">抱歉,没有符合条件的搜索结果</span></div>');
+
+
+        $this->display();
+    }
+
+    public function departmentShow(){
+        $this->display();
+    }
+}
+?>

@@ -1,0 +1,13 @@
+<?php
+
+namespace Hos\Controller;
+use Think\Controller;
+class DutyController extends Controller{
+
+    public function lst(){
+        $this->display();
+    }
+
+}
+
+?>

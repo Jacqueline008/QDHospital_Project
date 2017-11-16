@@ -1,0 +1,237 @@
+/************************************/
+/***************平板以及手机下的列表****/
+
+/********************************/
+/*************手机下的内容展示*****/
+
+
+/***********************************************************************/
+/*******************信息展示容器     begin********************************/
+/*总容器*/
+/****************容器左侧部分(列表)******************/
+/****************容器右侧部分(内容展示)  begin*******/
+
+/*****************右侧部分1:列表部分  begin**/
+.info-content{
+    height:400px;
+}
+.list-container{
+    margin-top: 0px;
+}
+/*列表总容器*/
+.btn-container{
+    width:150px !important;
+}
+.btn-del{
+    width:130px;
+}
+.p_name{
+    width:100px;
+    float: left;
+    text-align: center;
+}
+.p_id{
+     width:250px;
+     float: left;
+     text-align: center;
+ }
+.begin_date,.end_date{
+    width:200px;
+    float: left;
+    text-align: center;
+}
+/*列表的head*/
+/*列表的item*/
+/**********列表中的按钮容器  begin*****/
+/**********列表中的按钮容器  end*****/
+/*****************右侧部分1:列表部分  end**/
+
+/*****************右侧部分2:分页部分  begin**/
+/*****************右侧部分2:分页部分  end**/
+
+/****************容器右侧部分(内容展示)  end*******/
+
+/***************************************************/
+/*******************信息展示容器     end************/
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /***************************************************/
+    /*******************信息展示容器     begin************/
+    /*总容器*/
+    /****************容器左侧部分(列表)******************/
+    /****************容器右侧部分(内容展示)  begin*******/
+    /*****************右侧部分1:列表部分  begin**/
+    .p_name{
+        width:100px;
+        float: left;
+        text-align: center;
+    }
+    .p_id{
+        width:250px;
+        float: left;
+        text-align: center;
+    }
+    .begin_date,.end_date{
+        width:150px;
+        float: left;
+        text-align: center;
+    }
+    /**********列表中的按钮容器  begin*****/
+    /**********列表中的按钮容器  end*****/
+    /*****************右侧部分1:列表部分  end**/
+
+    /****************容器右侧部分(内容展示)  end*******/
+
+    /***************************************************/
+    /*******************信息展示容器     end************/
+}
+
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+
+    /***************************************************/
+    /*******************信息展示容器     begin************/
+    /*总容器*/
+    /****************容器左侧部分(列表)******************/
+    /****************容器右侧部分(内容展示)  begin*******/
+    /*****************右侧部分1:列表部分  begin**/
+    .p_name{
+        width:100px;
+        float: left;
+        text-align: center;
+    }
+    .p_id{
+        width:250px;
+        float: left;
+        text-align: center;
+    }
+    .begin_date,.end_date{
+        width:100px;
+        float: left;
+        text-align: center;
+    }
+    /*****************右侧部分1:列表部分  end**/
+
+    /****************容器右侧部分(内容展示)  end*******/
+
+    /***************************************************/
+    /*******************信息展示容器     end************/
+
+
+
+    /******************************************/
+    /***************平板以及手机下的列表 begin****/
+    /*自定义*/
+    .info-list-mobile{
+        display: block;
+    }
+    /*自定义*/
+    .info-list-mobile a{
+        display: block;
+        width: 16.5%;
+        margin-right: 0.15%;
+    }
+    /*自定义*/
+    .last{
+        margin-right: 0;
+    }
+    /******************************************/
+    /***************平板以及手机下的列表 end****/
+
+}
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+
+    /*总容器 隐藏掉为移动端以上设计的信息展示容器*/
+
+    /*************************************/
+    /*************手机下的内容展示 begin*****/
+    .list-container-m{
+        margin-top: 0px;
+    }
+    /*****************部分1:列表部分 begin***/
+    .p_name-m{
+        width:49%;
+        height:35px;
+        line-height:35px;
+        float:left;
+        text-align: left;
+    }
+    .p_id-m{
+        width:49%;
+        height:35px;
+        line-height:35px;
+        float:right;
+        text-align: right;
+    }
+    .begin_date-m{
+        float: left;
+        height: 35px;
+        line-height: 35px;
+    }
+    .end_date-m{
+        float: left;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*删除按钮*/
+    .btn-container-m{
+        width:49%;
+        /*!*height: ;*!*/
+        float: right;
+    }
+    .btn-del-m{
+        width:100px;
+        height: 35px;
+        margin: 0 10px;
+        line-height: 35px;
+        text-align: center;
+        border-radius: 7px;
+        float: right;
+        position: relative;
+        top:0px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .btn-del-m{
+        background-color:#FDE8C9 ;
+        color:#E87404;
+    }
+    .btn-del-m:hover{
+        background-color:#fce0b8 ;
+        text-decoration: none;
+        color:#E87404;
+    }
+    .btn-del-m img{
+        width:28px;
+        height: 28px;
+        position: relative;
+        left:-5px;
+        top:-3px;
+    }
+    .btn-del-m span{
+        position: relative;
+        top:-2px;
+    }
+    /*****************部分1:列表部分 end***/
+
+    /*****************部分2:分页部分 begin***/
+    /*****************部分2:分页部分 end***/
+
+    /*************************************/
+    /*************手机下的内容展示 end*****/
+
+}
+
+

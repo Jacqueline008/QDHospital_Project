@@ -1,0 +1,24 @@
+[ 2017-10-24T19:57:58+08:00 ] ::1 /phpStorm_Project/HOS/HosAdmin/Hospital/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+ERR: 无法加载模块:HosAdmin
+
+[ 2017-10-24T20:16:36+08:00 ] ::1 /phpStorm_Project/HOS/HosAdmin/Hosmsg/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000515s ]
+ERR: 无法加载模块:HosAdmin
+
+[ 2017-10-24T20:17:03+08:00 ] ::1 /phpStorm_Project/HOS/HosAdmin/Hosmsg/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+ERR: 无法加载模块:HosAdmin
+
+[ 2017-10-24T20:28:00+08:00 ] ::1 /phpStorm_Project/HOS/HosAdmin/Hosmsg/lst
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000009s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000465s ]
+ERR: 无法加载模块:HosAdmin
+

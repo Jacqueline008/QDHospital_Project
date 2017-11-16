@@ -1,0 +1,306 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+
+
+/************************************/
+/***************平板以及手机下的列表****/
+
+/********************************/
+/*************手机下的内容展示*****/
+
+
+
+/***********************************************************************/
+/*******************信息展示容器     begin********************************/
+#info-container{
+    width:1170px;
+    height: 750px;
+}
+/****************容器左侧部分(列表)******************/
+
+/****************容器右侧部分(内容展示)  begin*******/
+
+
+/*****************右侧部分1:列表部分  begin**/
+.list-container{
+    width:1170px;
+}
+/*自定义*/
+.head{
+    height: 50px;
+    background-color:#D9EDF7 ;
+    line-height: 50px;
+    font-size: 15px;
+    color:#555;
+    font-weight: 600;
+}
+.head .doc-info{
+    float: left;
+    width:250px;
+    text-align: center;
+}
+.head .duty-container{
+    padding-left: 250px;
+    height: 50px;
+}
+.head .duty-container span{
+    float: left;
+    width:12.5%;
+    height: 100%;
+    text-align: center;
+}
+
+/*自定义*/
+.item{
+    height: 150px;
+    line-height: 50px;
+    font-size: 15px;
+    color:#555;
+    font-weight: 600;
+}
+.item .doc-info{
+    float: left;
+    width:250px;
+    height: 100%;
+    text-align: center;
+    border-left: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.item .doc-info img{
+    width:90px;
+    height: 120px;
+    position: relative;
+    top:15px;
+    left:-70px;
+}
+.item .doc-info .doc_name,.doclevel_name,.doc_area{
+    width:100%;
+    height: 30px;
+    position: relative;
+    top:-120px;
+    left:5px;
+    float:left;
+    padding-left: 80px;
+    font-weight: 500;
+    font-size: 14px;
+}
+.item .doc-info .doc_name{
+    font-weight: 600;
+}
+.item .doc-info .doclevel_name{
+    color:#3DAFA7;
+}
+.item .doc-info .doc_area{
+    word-break: break-all;
+    line-height: 25px;
+    margin-top: 10px;
+    padding-left: 105px;
+    padding-right: 10px;
+}
+.item .duty-container{
+    padding-left: 250px;
+    height: 150px;
+}
+.item .duty-container span{
+    float: left;
+    width:12.5%;
+    height: 100%;
+    text-align: center;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    font-weight: 500;
+}
+.item .duty-container .duty_ready:hover{
+    background-color: #f0f0f0;
+}
+.item .duty-container .range .up:hover{
+    background-color: #fff !important;
+}
+.item .duty-container .range .down:hover{
+    background-color: #fff !important;
+}
+.item .duty-container span .up{
+    display: block;
+    width:100%;
+    height: 50%;
+    border-bottom: 1px solid grey;
+    line-height: 75px;
+}
+.item .duty-container span .down{
+    display: block;
+    width:100%;
+    height: 50%;
+    line-height: 75px;
+}
+/*****************右侧部分1:列表部分  end**/
+
+/*****************右侧部分2:分页部分  begin**/
+.page-list{
+    width:1170px;
+}
+/*****************右侧部分2:分页部分  end**/
+
+/****************容器右侧部分(内容展示)  end*******/
+
+/***********************************************************************/
+/*******************信息展示容器     end********************************/
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    #info-container{
+        width:970px;
+    }
+
+    /****************容器右侧部分(内容展示)  begin*******/
+
+    /*****************右侧部分1:列表部分  begin**/
+    .list-container{
+        width:970px;
+    }
+    /*****************右侧部分1:列表部分  end**/
+    .page-list{
+        width:970px;
+    }
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+}
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    #info-container{
+        width: 750px;
+        height: 750px;
+    }
+    /****************容器左侧部分(列表)******************/
+
+    /****************容器右侧部分(内容展示)  begin*******/
+
+    /*****************右侧部分1:列表部分  begin**/
+    .list-container{
+        width:750px;
+    }
+    /*****************右侧部分1:列表部分  end**/
+    .page-list{
+        width:750px;
+    }
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+
+
+    /******************************************/
+    /***************平板以及手机下的列表 begin****/
+    /*自定义*/
+    .info-list-mobile{
+        display: block;
+    }
+    /*自定义*/
+    .info-list-mobile a{
+        display: block;
+        width: 16.5%;
+        margin-right: 0.15%;
+    }
+    /*自定义*/
+    .last{
+        margin-right: 0;
+    }
+    /******************************************/
+    /***************平板以及手机下的列表 end****/
+
+}
+
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /*总容器 隐藏掉为移动端以上设计的信息展示容器*/
+
+
+    /*************************************/
+    /*************手机下的内容展示 begin*****/
+
+
+    /*****************部分1:列表部分 begin***/
+    .list-container-m{
+        height: auto;
+    }
+    .item-m{
+        width:100%;
+        height: 280px;
+        /*background-color: #ededed;*/
+    }
+    .item-m .doc-info-m{
+        width:100px;
+        height:100%;
+        float: left;
+        border: 1px solid grey;
+    }
+    .item-m .doc-info-m img{
+        display: block;
+        width:90px;
+        height: 120px;
+        margin: 10px auto;
+    }
+    .item-m .doc-info-m span{
+        display:block;
+        text-align: center;
+        height: 25px;
+        line-height: 25px;
+    }
+    .item-m .doc-info-m .doc_name_m{
+        font-weight: 600;
+    }
+    .item-m .doc-info-m .doclevel_name_m{
+        color:#3DAFA7;
+    }
+    .item-m .doc-info-m .doc_area_m{
+        line-height: 20px;
+    }
+    .item-m .duty-container-m{
+        height:100%;
+        padding-left: 100px;
+    }
+    .item-m .duty-container-m div{
+        width:100%;
+        height: 35px;
+    }
+    .item-m .duty-container-m .range{
+        border-top: 1px solid grey;
+        background-color:#D9EDF7 ;
+    }
+    .item-m .duty-container-m div span{
+        width:33.3%;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        float: left;
+        border-right: 1px solid grey;
+        border-bottom: 1px solid grey;
+    }
+    /*****************部分1:列表部分 end***/
+
+    /****************部分2：分页部分 begin*/
+    /****************部分2：分页部分 end*/
+    /*************************************/
+    /*************手机下的内容展示 end*****/
+
+}
+
+

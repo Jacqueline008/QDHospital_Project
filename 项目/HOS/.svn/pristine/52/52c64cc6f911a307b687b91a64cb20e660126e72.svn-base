@@ -1,0 +1,461 @@
+<?php
+namespace Pat\Controller;
+use Think\Controller;
+class TreatmentController extends Controller {
+    public function hospitalShow(){
+        //获取行政区划表的内容
+        $cant_Model=M("cant");
+        $cant_table=$cant_Model->select();
+        //将行政区划表的内容传入视图层
+        $this->assign("cant_table",$cant_table);
+
+        //获取医院级别表的内容
+        $hos_level_Model=M("hos_level");
+        $hos_level_table=$hos_level_Model->select();
+        //将医院级别表的内容传入视图层
+        $this->assign("hos_level_table",$hos_level_table);
+
+        //若用户没有GET,根据固定sql语句来查询hospital表
+        $sql="select *,substring(msg,1,170) as big_msg,substring(msg,1,50) as small_msg from hospital join cant on hospital.cant_code=cant.cant_code join hos_level on hospital.hoslevel_code=hos_level.hoslevel_code ";
+        //若用户GET,根据拼接sql语句来查询hospital表
+        if(isset($_GET)){
+            //根据用户传入的医院代码/名称，行政区划，医院级别来拼接sql语句。
+            if(isset($_GET["hos_name"])){
+                if(I("get.cant_code")!=="null"){
+                    if(I("get.hoslevel_code")!=="null"){
+                        $sql=$sql."where hospital.hos_name='".I("get.hos_name")."' and cant.cant_code='".I("get.cant_code")."' and hos_level.hoslevel_code='".I("get.hoslevel_code")."'";
+                    }else{
+                        $sql=$sql."where hospital.hos_name='".I("get.hos_name")."' and cant.cant_code='".I("get.cant_code")."'";
+                    }
+                }else{
+                    if(I("get.hoslevel_code")!=="null"){
+                        $sql=$sql."where hospital.hos_name='".I("get.hos_name")."' and hos_level.hoslevel_code='".I("get.hoslevel_code")."'";
+                    }else{
+                        $sql=$sql."where hospital.hos_name='".I("get.hos_name")."'";
+                    }
+                }
+            }else{
+                if(I("get.cant_code")!=="null"){
+                    if(I("get.hoslevel_code")!=="null"){
+                        if(I("get.cant_code")==="" && I("get.hoslevel_code")===""){
+                            $sql=$sql;
+                        }else{
+                            $sql=$sql."where cant.cant_code='".I("get.cant_code")."' and hos_level.hoslevel_code='".I("get.hoslevel_code")."'";
+                        }
+                    }else{
+                        $sql=$sql."where cant.cant_code='".I("get.cant_code")."'";
+                    }
+                }else{
+                    if(I("get.hoslevel_code")!=="null"){
+                        $sql=$sql."where hos_level.hoslevel_code='".I("get.hoslevel_code")."'";
+                    }else{
+                        $sql=$sql;
+                    }
+                }
+            }
+        }
+        $sql=$sql." order by hospital.hos_code ";
+
+        //分页展示
+        //1.统计满足条件的医院表的行数
+        $hospital_Model=new \Think\Model();
+        $hospital_table=$hospital_Model->query($sql);
+        $count=count($hospital_table);
+        //2.配置每页显示的数据条数
+        $Page=new \Think\Page($count,5);
+        //3.配置分页样式
+        $Page -> setConfig('first','首页');
+        $Page -> setConfig('prev','<<');
+        $Page -> setConfig('link','indexpagenumb');//pagenumb 会替换成页码
+        $Page -> setConfig('next','>>');
+        $Page -> setConfig('last','尾页');
+        $Page -> lastSuffix = false;//最后一页不显示为总页数
+        $Page -> setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%');
+        //4.分页显示输出
+        $show=$Page->show();
+        $this->assign("page",$show);
+
+
+        //分页展示-移动端
+        //1.统计满足条件的医院表的行数
+        $hospital_Model=new \Think\Model();
+        $hospital_table=$hospital_Model->query($sql);
+        $count=count($hospital_table);
+        //2.配置每页显示的数据条数
+        $Page2=new \Think\Page($count,5);
+        //3.配置分页样式
+        $Page2 -> setConfig('first','首页');
+        $Page2 -> setConfig('prev','上一页');
+        $Page2 -> setConfig('link','indexpagenumb');//pagenumb 会替换成页码
+        $Page2 -> setConfig('next','下一页');
+        $Page2 -> setConfig('last','尾页');
+        $Page2 -> lastSuffix = false;//最后一页不显示为总页数
+        $Page2 -> setConfig('theme','%FIRST% %UP_PAGE% %DOWN_PAGE% %END%');
+        //4.分页显示输出
+        $show2=$Page2->show();
+        $this->assign("page2",$show2);
+
+        //获取符合条件的医院表中分页的第一页
+        $sql=$sql." limit ".$Page->firstRow.",".$Page->listRows."";
+        $hospital_Model=new \Think\Model();
+        $hospital_table=$hospital_Model->query($sql);
+        //将医院表的内容传入视图层
+        $this->assign("hospital_table",$hospital_table);
+
+
+        //查询结果没有时显示的div
+        $this->assign("empty",'<div class="noContent" style="text-align: center;margin-top: 50px;"><img src="/HOS/Public/images/noContent.png" style="width: 200px;height: 150px;"><span style="display: block;color:#555;font-size: 16px;margin-top: 20px;">抱歉,没有符合条件的搜索结果</span></div>');
+        //查询结果没有时显示的div--移动端
+        $this->assign("empty2",'<div class="noContent" style="text-align: center;margin-top: 50px;"><img src="/HOS/Public/images/noContent.png" style="width: 130px;height: 105px;"><span style="display: block;color:#555;font-size: 14px;margin-top: 20px;">抱歉,没有符合条件的搜索结果</span></div>');
+
+
+        $this->display();
+    }
+
+    public function departmentShow(){
+        //获取传入的hos_code
+        $hos_code=I("get.hos_code");
+        //将hos_code对应的医院表的记录查出来
+        $hospital_Model=M("hospital");
+        $hospital_row=$hospital_Model->join("inner join hos_level on hospital.hoslevel_code=hos_level.hoslevel_code join cant on hospital.cant_code=cant.cant_code")->where("hos_code='".$hos_code."'")->find();
+        //将查出的记录传入视图层
+        $this->assign("hospital_row",$hospital_row);
+
+
+        //将dictionary_item(科室类别)查出来
+        $dictionary_item_Model=M("DictionaryItem");
+        $dic_values=$dictionary_item_Model->where("dic_item='DEP_CATEGORY'")->getField("dic_value",true);
+
+        $result_array=array();
+        for($i=0;$i<count($dic_values);$i++){
+
+            $dic_value=$dic_values[$i];
+
+            //将hos_code和dic_value对应的科室表的记录查出来
+            $department_Model=M("Department");
+            $department_table=$department_Model->join("dictionary_item on department.dic_item=dictionary_item.dic_item and department.dic_code=dictionary_item.dic_code")->where("hos_code='".$hos_code."' and dic_value='".$dic_value."'")->select();
+            $department_array=array();
+            for($j=0;$j<count($department_table);$j++){
+                array_push($department_array,$department_table[$j]);
+            }
+            if(count($department_array)!=0){
+                $result_array[$dic_value]=$department_array;
+            }
+        }
+        $this->assign("result_array",$result_array);
+
+        //查询结果没有时显示的div
+        $this->assign("empty",'<div class="noContent" style="text-align: center;margin-top: 50px;padding-bottom: 30px;"><img src="/HOS/Public/images/noContent.png" style="width: 200px;height: 150px;"><span style="display: block;color:#555;font-size: 16px;margin-top: 20px;">抱歉,该医院还未增设科室!</span></div>');
+
+        $this->display();
+    }
+
+    public function dutyShow(){
+
+        //**********************************************
+        //展示明天之后的7天日期
+        $week_array=array();
+        for($i=1;$i<=7;$i++){
+            $week_item_array=array();
+            $date=date("Y-m-d",strtotime("+".$i." days"));
+            $day=date("w",strtotime("+".$i." days"));
+            $week_item_array["date"]=$date;
+            $week_item_array["day"]=$day;
+
+            array_push($week_array,$week_item_array);
+        }
+        $this->assign("week_array",$week_array);
+        //**********************************************
+
+
+        //获取hos_code dep_code
+        $hos_code=I("get.hos_code");
+        $dep_code=I("get.dep_code");
+
+        //若用户没有GET,根据固定sql语句来查询doctor表
+        $sql="select *,substring(doctor.doc_area,1,20) as small_area from doctor join doc_level on doctor.doclevel_code=doc_level.doclevel_code  where doctor.hos_code='".$hos_code."' and doctor.dep_code='".$dep_code."' order by doctor.doc_code ";
+
+//********************************************************************
+        //分页展示
+        //1.统计满足条件的医院表的行数
+        $doctor_Model=new \Think\Model();
+        $doctor_table=$doctor_Model->query($sql);
+        $count=count($doctor_table);
+        //2.配置每页显示的数据条数
+        $Page=new \Think\Page($count,4);
+        //3.配置分页样式
+        $Page -> setConfig('first','首页');
+        $Page -> setConfig('prev','<<');
+        $Page -> setConfig('link','indexpagenumb');//pagenumb 会替换成页码
+        $Page -> setConfig('next','>>');
+        $Page -> setConfig('last','尾页');
+        $Page -> lastSuffix = false;//最后一页不显示为总页数
+        $Page -> setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%');
+        //4.分页显示输出
+        $show=$Page->show();
+        $this->assign("page",$show);
+
+
+        //分页展示-移动端
+        //1.统计满足条件的医院表的行数
+        $doctor_Model=new \Think\Model();
+        $doctor_table=$doctor_Model->query($sql);
+        $count=count($doctor_table);
+        //2.配置每页显示的数据条数
+        $Page2=new \Think\Page($count,4);
+        //3.配置分页样式
+        $Page2 -> setConfig('first','首页');
+        $Page2 -> setConfig('prev','上一页');
+        $Page2 -> setConfig('link','indexpagenumb');//pagenumb 会替换成页码
+        $Page2 -> setConfig('next','下一页');
+        $Page2 -> setConfig('last','尾页');
+        $Page2 -> lastSuffix = false;//最后一页不显示为总页数
+        $Page2 -> setConfig('theme','%FIRST% %UP_PAGE% %DOWN_PAGE% %END%');
+        //4.分页显示输出
+        $show2=$Page2->show();
+        $this->assign("page2",$show2);
+//********************************************************************
+
+        //获取符合条件的专家
+        $sql=$sql." limit ".$Page->firstRow.",".$Page->listRows."";
+        $doctor_Model=new \Think\Model();
+        $doctor_table=$doctor_Model->query($sql);
+
+        $result_array=array();
+        for($i=0;$i<count($doctor_table);$i++){
+            $item_array=array();
+            $item_array["doc_code"]=$doctor_table[$i]["doc_code"];
+            $item_array["doc_name"]=$doctor_table[$i]["doc_name"];
+            $item_array["doc_pic"]=$doctor_table[$i]["doc_pic"];
+            $item_array["doc_area"]=$doctor_table[$i]["small_area"];
+            $item_array["doclevel_name"]=$doctor_table[$i]["doclevel_name"];
+
+            $duty_array=array();
+            //查询出该专家的14条坐诊状态
+            $inner_sql="select * from duty_schedule where doc_code='".$item_array["doc_code"]."' ";
+            $duty_schedule_Model=new \Think\Model();
+            $duty_schedule_table=$duty_schedule_Model->query($inner_sql);
+
+            //按明天的日期顺序将14条信息插入duty_array
+            for($k=1;$k<=7;$k++){
+                $day_num=date("w",strtotime("+".$k." days"));
+                for($j=0;$j<count($duty_schedule_table);$j++){
+                    if($duty_schedule_table[$j][week_code]==$day_num){
+                        $duty_inner_array=array();
+                        $duty_inner_array["dut_code"]=$duty_schedule_table[$j][dut_code];
+                        $duty_inner_array["dut_status"]=$duty_schedule_table[$j][dut_status];
+                        array_push($duty_array,$duty_inner_array);
+                    }
+                }
+            }
+            //
+
+            $item_array["duty"]=$duty_array;
+
+            array_push($result_array,$item_array);
+        }
+        $this->assign("result_array",$result_array);
+
+
+
+        //查询结果没有时显示的div
+        $this->assign("empty",'<div class="noContent" style="text-align: center;margin-top: 150px;"><img src="/HOS/Public/images/noContent.png" style="width: 200px;height: 150px;"><span style="display: block;color:#555;font-size: 16px;margin-top: 20px;">抱歉,该科室还未设置专家</span></div>');
+        //查询结果没有时显示的div--移动端
+        $this->assign("empty2",'<div class="noContent" style="text-align: center;margin-top: 50px;"><img src="/HOS/Public/images/noContent.png" style="width: 130px;height: 105px;"><span style="display: block;color:#555;font-size: 14px;margin-top: 20px;">抱歉,该科室还未设置专家</span></div>');
+
+        //获取禁用时长
+        $dictionary_item_Model=M("DictionaryItem");
+        $stop_time_value=$dictionary_item_Model->where("dic_item='STOP_TIME' and dic_code='1' ")->getField("dic_value");
+        //将查询出的结果传入视图层
+        $this->assign("stop_time_value",$stop_time_value);
+
+        //如果患者登录了，并且在黑名单中，就获取end_date
+        if(session("?userID")){
+            $p_id=session("userID");
+            $blacklist_Model=M("Blacklist");
+            $end_date=$blacklist_Model->where("p_id='".$p_id."'")->getField("end_date");
+            if($end_date!=null){
+                $this->assign("end_date",$end_date);
+            }
+        }
+
+
+
+        $this->display();
+    }
+
+
+    //患者点击预约后请求的逻辑
+    public function dutyShowEdit(){
+        //指定该PHP返回的数据为text无格式正文
+        header("Content-Type: text/plain;charset=utf-8");
+        //解决跨域问题
+        header("Access-Control-Allow-Origin:*");
+        header("Access-Control-Allow-Methods:POST,GET");
+
+        //1.获取要预约的值班代码
+        $dut_code=I("post.dut_code");
+
+        if(!session("?userID")){
+            //患者没有登录
+            echo 2;
+            return;
+        }else{
+            //2.获取患者id
+            $p_id=session("userID");
+
+            //查询该用户是否在黑名单中
+            $blacklist_Model=M("Blacklist");
+            $end_date=$blacklist_Model->where("p_id='".$p_id."'")->getField("end_date");
+            if($end_date!=null){
+                echo 3;
+                exit;
+            }
+
+            //3.获取想要预约的时间
+            $add_day=I("post.add_day");
+            $t_date=$day_num=date("Y-m-d",strtotime("+".$add_day." days"));
+
+            $duty_schedule_Model=M("DutySchedule");
+            $time_range=$duty_schedule_Model->where("dut_code='".$dut_code."'")->getField("time_range");
+
+            $time_schedule_Model=M("TimeSchedule");
+            $time_code_table=$time_schedule_Model->where("time_range='".$time_range."'")->getField("time_code",true);
+
+            $time_code_array=array();
+            for($i=0;$i<count($time_code_table);$i++){
+                $time_code=$time_code_table[$i];
+
+                $treatment_Model=M("Treatment");
+                $treatment_row=$treatment_Model->where("dut_code='".$dut_code."' and t_date='".$t_date."' and time_code='".$time_code."'")->find();
+
+                if($treatment_row===null){
+                    array_push($time_code_array,$time_code);
+                }else{
+                    continue;
+                }
+            }
+
+            if(count($time_code_array)===0){
+                //说明该值班代码所包含的值班时间代码都预约出去了
+                echo 4;
+                return;
+            }else{
+//                $this->treatmentShow($dut_code,$p_id,$t_date);
+                echo '{"dut_code":"'.$dut_code.'","p_id":"'.$p_id.'","t_date":"'.$t_date.'"}';
+            }
+        }
+        //
+    }
+
+
+
+    //选择预约具体时间段的页面
+    public function treatmentShow(){
+        $dut_code=I("get.dut_code");
+        $p_id=I("get.p_id");
+        $t_date=I("get.t_date");
+
+
+        //查询出$dut_code所对应的信息
+        $duty_schedule_Model=M("DutySchedule");
+        $duty_schedule_row=$duty_schedule_Model->join("inner join doctor on duty_schedule.doc_code=doctor.doc_code join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code join hospital on department.hos_code=hospital.hos_code")->where("dut_code='".$dut_code."'")->find();
+        //1.将查出的信息传入视图层
+        $this->assign("duty_schedule_row",$duty_schedule_row);
+
+        //2.传入视图层
+        $this->assign("t_date",$t_date);
+
+        //查询出$p_id所对应的信息
+        $patient_Model=M("Patient");
+        $patient_row=$patient_Model->where("p_id='".$p_id."'")->find();
+        //3.将查出的信息传入视图层
+        $this->assign("patient_row",$patient_row);
+
+
+        $duty_schedule_Model=M("DutySchedule");
+        $time_range=$duty_schedule_Model->where("dut_code='".$dut_code."'")->getField("time_range");
+
+        $time_schedule_Model=M("TimeSchedule");
+        $time_schedule_table=$time_schedule_Model->where("time_range='".$time_range."'")->select();
+
+        $time_schedule_array=array();
+        for($i=0;$i<count($time_schedule_table);$i++){
+            $time_code=$time_schedule_table[$i]["time_code"];
+            $treatment_Model=M("Treatment");
+            $treatment_row=$treatment_Model->where("dut_code='".$dut_code."' and t_date='".$t_date."' and time_code='".$time_code."'")->find();
+            if($treatment_row===null){
+                $time_schedule_item=array();
+                $time_schedule_item["time_code"]=$time_code=$time_schedule_table[$i]["time_code"];
+                $time_schedule_item["time_content"]=$time_code=$time_schedule_table[$i]["time_content"];
+                array_push($time_schedule_array,$time_schedule_item);
+            }else{
+                continue;
+            }
+        }
+        //4.将查出的信息传入视图层
+        $this->assign("time_schedule_array",$time_schedule_array);
+
+        $this->display();
+    }
+
+    //立即预约按钮请求的逻辑
+    public function treatmentShowEdit(){
+        //指定该PHP返回的数据为text无格式正文
+        header("Content-Type: text/plain;charset=utf-8");
+        //解决跨域问题
+        header("Access-Control-Allow-Origin:*");
+        header("Access-Control-Allow-Methods:POST,GET");
+
+        $dut_code=I("post.dut_code");
+        $p_id=I("post.p_id");
+        $t_date=I("post.t_date");
+        $time_code=I("post.time_code");
+
+        $add_Model=M("Treatment");
+
+        $addData["dut_code"]=$dut_code;
+        $addData["p_id"]=$p_id;
+        $addData["t_date"]=$t_date;
+        $addData["time_code"]=$time_code;
+
+        $add_Model->add($addData);
+
+        echo 1;
+        return;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //专家详细信息页面
+    public function docShow(){
+        //获取专家代码
+        $doc_code=I("get.doc_code");
+        //获取该专家所对应的信息
+        $doctor_Model=M(Doctor);
+        $doctor_row=$doctor_Model->join("inner join department on doctor.hos_code=department.hos_code and doctor.dep_code=department.dep_code join doc_level on doctor.doclevel_code=doc_level.doclevel_code join hospital on doctor.hos_code=hospital.hos_code")->where("doctor.doc_code='".$doc_code."'")->find();
+        //将信息传入视图层
+        $this->assign("doctor_row",$doctor_row);
+
+        $this->display();
+    }
+}
+?>

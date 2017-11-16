@@ -1,0 +1,12 @@
+<?php
+namespace Doc\Controller;
+use Think\Controller;
+class DocController extends Controller {
+
+    public function edit(){
+        $this->display();
+    }
+
+}
+
+?>

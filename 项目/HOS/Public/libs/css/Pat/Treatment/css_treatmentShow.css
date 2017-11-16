@@ -1,0 +1,199 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+
+body{
+    background-color: #F4F6F8;
+}
+
+/*********************详细信息展示容器 begin***********************************/
+#info_container{
+    width:970px;
+    height: auto;
+    margin: 0 auto;
+    background-color: #fff;
+    position: relative;
+    top:120px;
+}
+.inner-container{
+    width: 600px;
+    height: auto;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.title{
+    font-size: 26px;
+    letter-spacing:25px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 30px;
+    color:#666;
+}
+.doc_pic{
+    width:150px;
+    height: 200px;
+    float: left;
+    margin-bottom: 20px;
+}
+.doc_name {
+    padding-left: 230px;
+    font-size: 24px;
+    font-weight:600;
+    color:#666;
+}
+.hos_name{
+    padding-left: 230px;
+    font-size: 18px;
+    margin-top: 35px;
+}
+.dep_name{
+    padding-left: 230px;
+    font-size: 18px;
+    margin-top: 35px;
+}
+.t-date-label{
+    clear: both;
+    width: 100%;
+    height: 35px;
+    background-color: #FDE8C9;
+    font-size: 20px;
+    line-height: 35px;
+    padding-left: 20px;
+    color:#E87404;
+}
+.t_date{
+    float: left;
+    width:100px;
+    height: 70px;
+    font-size: 18px;
+    line-height: 70px;
+}
+.time_range{
+    display: block;
+    height: 70px;
+    font-size: 18px;
+    line-height: 70px;
+    padding-left: 150px;
+}
+.time_code{
+    width:200px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16px;
+    margin-bottom:20px;
+}
+
+.p-label{
+    clear: both;
+    width: 100%;
+    height: 35px;
+    background-color: #FDE8C9;
+    font-size: 20px;
+    line-height: 35px;
+    padding-left: 20px;
+    color:#E87404;
+    margin-bottom: 10px;
+}
+.p_name,.p_id,.p_tel{
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+}
+.btn-submit{
+    width: 100%;
+    height: 50px;
+    background-color: #3DAFA7;
+    border:none;
+    font-size: 18px;
+    color:#fff;
+    letter-spacing: 5px;
+    margin: 30px auto;
+}
+.btn-submit:hover{
+    background-color:cadetblue ;
+}
+/*********************详细信息展示容器 end***********************************/
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+    /*********************详细信息展示容器 begin***********************************/
+    #info_container{
+        width:750px;
+    }
+    /*********************详细信息展示容器 end***********************************/
+}
+
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /*********************详细信息展示容器 begin***********************************/
+    #info_container{
+        width:100%;
+        top:80px;
+        padding: 0 5px;
+    }
+    .inner-container{
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+    .title{
+        font-size: 22px;
+        letter-spacing:15px;
+        height: 50px;
+        line-height: 50px;
+        margin-bottom: 20px;
+        color:#666;
+    }
+    .doc_pic{
+        width:150px;
+        height: 200px;
+        float: left;
+    }
+    .doc_name {
+        padding-left: 165px;
+        font-size: 20px;
+        font-weight:600;
+        color:#666;
+    }
+    .hos_name{
+        padding-left: 165px;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .dep_name{
+        padding-left: 165px;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .t_date{
+        font-size: 16px;
+    }
+    .time_range{
+        font-size: 16px;
+    }
+    .time_code{
+        font-size: 14px;
+    }
+    .p_name,.p_id,.p_tel{
+        font-size: 16px;
+    }
+    /*********************详细信息展示容器 end***********************************/
+
+}
+
+

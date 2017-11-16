@@ -1,0 +1,568 @@
+#bg_test{
+    position: relative;
+    top:150px;
+    background-color: purple;
+}
+
+
+/*****************轮播组件 begin*******************/
+/*轮播组件总容器*/
+#mycarousel{
+    width:1170px;
+    height: 350px;
+    margin: 0 auto;
+    position: relative;
+    top:70px;
+}
+/*轮播组件中的左右箭头*/
+.carousel-control.left {
+    background-image:none;
+}
+.carousel-control.right {
+    background-image:none;
+}
+/*轮播组件中每一个轮播中的图片*/
+#mycarousel img{
+    width:1170px;
+    height: 350px;
+}
+/*****************轮播组件 end*********************/
+
+
+/******************内容展示  begin*****************/
+.info-content{
+    width:1170px;
+    height: auto;
+    margin:0 auto;
+    position: relative;
+    top:120px;
+}
+/*****************部分1:搜索栏部分  begin***/
+.ic-search{
+    width:1170px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+/********搜索栏中的搜索项 begin*/
+.ic-search .search-item{
+    float: left;
+    text-align: center;
+    line-height: 50px;
+}
+/*自定义*/
+.hos-name{
+    width:330px;
+}
+/*自定义*/
+.cant-code{
+    width:300px;
+}
+/*自定义*/
+.hoslevel-code{
+    width:300px;
+}
+/*搜索项中的span*/
+.search-item span{
+    font-size: 14px;
+    font-weight: 600;
+    color:#555;
+}
+/*搜索项中的input*/
+.search-item input{
+    width:230px;
+    height: 35px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin:0 10px;
+}
+/*搜索项中的select*/
+.ic-search select{
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    margin:0 10px;
+}
+/**********搜索栏中的搜索项 end*/
+
+/*搜索栏中的按钮容器  begin*****/
+.ic-search .btn-container{
+    width:220px;
+    height: 100%;
+    float: right;
+}
+.btn-search{
+    width:220px;
+    height: 35px;
+    line-height: 38px;
+    text-align: center;
+    border-radius: 7px;
+    float: right;
+    position: relative;
+    top:7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+/*搜索按钮*/
+.btn-search{
+    border:none;
+    background-color: #ededed;
+    color:#666;
+}
+.btn-search:hover{
+    background-color: #dddddd;
+    color:#666;
+    text-decoration: none;
+}
+.btn-search img{
+    width:20px;
+    height: 20px;
+    position: relative;
+    left:-5px;
+    top:-2px;
+}
+.btn-search span{
+    position: relative;
+    top:-2px;
+}
+/*搜索栏中的按钮容器  end*****/
+
+/*****************部分1:搜索栏部分  end***/
+
+/*****************部分2:列表部分  begin**/
+.list-container-m{
+    display:none;
+}
+.list-container{
+    width:100%;
+}
+/*列表项*/
+.list-item{
+    width:100%;
+    height: 180px;
+    border: 1px dashed grey;
+    padding: 0 20px;
+}
+/*列表项中的图片*/
+.list-item img{
+    width:200px;
+    height: 150px;
+    float: left;
+    position: relative;
+    top:15px;
+}
+/*列表项中宽度自适应的混合容器*/
+.list-item .mix-container{
+    height: 100%;
+    padding-left: 220px;
+    padding-top: 20px;
+}
+.mix-container .hos-name{
+    display: block;
+    width:170px;
+    height: 28px;
+    font-size: 20px;
+    color:#666;
+    font-weight: 600;
+    float: left;
+}
+.mix-container .hoslevel-code{
+    display: block;
+    width:100px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #FDE8C9;
+    color:#E87404;
+    position: relative;
+    float: left;
+}
+.mix-container .cant-code{
+    display: block;
+    width:100px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background-color: #CBF0BA;
+    color:#3DAFA7;
+    position: relative;
+    float: left;
+    margin-left: 20px;
+}
+.mix-container .msg{
+    display: block;
+    width:100%;
+    float: left;
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 30px;
+}
+/*****************部分2:列表部分  end**/
+
+/*****************部分3:分页部分  begin**/
+.page-list{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+}
+.page-list .first,.page-list .end{
+    text-align: center;
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color:#666;
+    font-size: 16px;
+}
+.page-list .current{
+    text-align: center;
+    text-decoration: none;
+    background-color: #d6e8f6;
+    border-radius: 5px;
+    text-shadow: 0 1px 0 #fff;
+    color:#1c55b5;
+    padding: 5px 15px;
+}
+.page-list .num{
+    text-align: center;
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 5px;
+    color:#1c55b5;
+    padding: 5px 15px;
+}
+.page-list .prev,.page-list .next{
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+    color:#1c55b5;
+    padding: 5px 10px;
+}
+
+/*****************部分3:分页部分  end**/
+
+/******************内容展示  end*****************/
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /*****************轮播组件 begin*******************************/
+    /*轮播组件总容器*/
+    #mycarousel{
+        width:970px;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+        top:70px;
+    }
+    /*轮播组件中每一个轮播中的图片*/
+    #mycarousel img{
+        width:970px;
+        height: 300px;
+    }
+    /*****************轮播组件 end*******************************/
+
+    /******************内容展示  begin*****************/
+    .info-content{
+        width:970px;
+    }
+    /*****************部分1:搜索栏部分  begin***/
+    .ic-search{
+        width:970px;
+    }
+    /*自定义*/
+    .hos-name{
+        width:260px;
+    }
+    /*自定义*/
+    .cant-code{
+        width:260px;
+    }
+    /*自定义*/
+    .hoslevel-code{
+        width:260px;
+    }
+    /*搜索项中的input*/
+    .search-item input{
+        width:160px;
+        margin:0 10px;
+    }
+    /*搜索项中的select*/
+    .ic-search select{
+        width: 160px;
+        margin:0 10px;
+    }
+    /**********搜索栏中的搜索项 end*/
+    /*搜索栏中的按钮容器  begin*****/
+    .ic-search .btn-container{
+        width:180px;
+    }
+    .btn-search{
+        width:180px;
+    }
+    /*搜索栏中的按钮容器  end*****/
+    /*****************部分1:搜索栏部分  end***/
+
+    /*****************部分2:列表部分  begin**/
+    /*列表项*/
+    .list-item{
+        padding: 0 10px;
+    }
+    /*列表项中宽度自适应的混合容器*/
+    .list-item .mix-container{
+        padding-top: 10px;
+    }
+    .mix-container .msg{
+        margin-top: 10px;
+    }
+    /*****************部分2:列表部分  end**/
+
+    /******************内容展示  end*****************/
+
+}
+
+
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+    /*****************轮播组件 begin*******************************/
+    /*轮播组件总容器*/
+    #mycarousel{
+        width:750px;
+        height: 300px;
+        margin: 0 auto;
+        position: relative;
+        top:70px;
+    }
+    /*轮播组件中每一个轮播中的图片*/
+    #mycarousel img{
+        width:750px;
+        height: 300px;
+    }
+    /*****************轮播组件 end*******************************/
+
+
+    /******************内容展示  begin*****************/
+    .info-content{
+        width:750px;
+    }
+    /*****************部分1:搜索栏部分  begin***/
+    .ic-search{
+        width:750px;
+    }
+    /*自定义*/
+    .hos-name{
+        width:200px;
+    }
+    /*自定义*/
+    .cant-code{
+        width:200px;
+    }
+    /*自定义*/
+    .hoslevel-code{
+        width:200px;
+    }
+    /*搜索项中的input*/
+    .search-item input{
+        width:130px;
+        margin:0 0px;
+    }
+    /*搜索项中的select*/
+    .ic-search select{
+        width: 130px;
+        margin:0 0px;
+    }
+    /**********搜索栏中的搜索项 end*/
+    /*搜索栏中的按钮容器  begin*****/
+    .ic-search .btn-container{
+        width:150px;
+    }
+    .btn-search{
+        width:150px;
+    }
+    /*搜索栏中的按钮容器  end*****/
+    /*****************部分1:搜索栏部分  end***/
+
+    /*****************部分2:列表部分  begin**/
+    /*列表项*/
+    .list-item{
+        padding: 0 5px;
+    }
+    /*列表项中的图片*/
+    .list-item img{
+        width:190px;
+        height: 140px;
+        top:20px;
+    }
+    /*列表项中宽度自适应的混合容器*/
+    .list-item .mix-container{
+        padding-left: 210px;
+        padding-top: 20px;
+    }
+    .mix-container .hos-name{
+        font-size: 18px;
+    }
+    .mix-container .msg{
+        margin-top: 0px;
+        font-size: 14px;
+        line-height: 23px;
+    }
+    /*****************部分2:列表部分  end**/
+
+    /******************内容展示  end*****************/
+
+
+}
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /*****************轮播组件 begin*******************************/
+    /*轮播组件总容器*/
+    #mycarousel{
+        width:100%;
+        height: 180px;
+        margin: 0 auto;
+        position: relative;
+        top:70px;
+    }
+    /*轮播组件中每一个轮播中的图片*/
+    #mycarousel img{
+        width:100%;
+        height: 180px;
+    }
+    /*****************轮播组件 end*******************************/
+
+    /******************内容展示  begin*****************/
+    .info-content{
+        width:100%;
+        padding: 0 5px;
+    }
+    /*****************部分1:搜索栏部分  begin***/
+    .ic-search{
+        width:100%;
+        height: 160px;
+    }
+    /*自定义*/
+    .hos-name{
+        width:100%;
+    }
+    /*自定义*/
+    .hos-name span{
+        display: none;
+    }
+    /*自定义*/
+    .cant-code{
+        width:49%;
+        float: left;
+    }
+    /*自定义*/
+    .cant-code span{
+        display: none;
+    }
+    /*自定义*/
+    .hoslevel-code{
+        width:49%;
+        float: right !important;
+    }
+    /*自定义*/
+    .hoslevel-code span{
+        display: none;
+    }
+
+    /*搜索项中的input*/
+    .ic-search input{
+        width: 100%;
+    }
+    /*搜索项中的select*/
+    .ic-search select{
+        width: 100%;
+        margin:0 0px;
+    }
+    /**********搜索栏中的搜索项 end*/
+    /*搜索栏中的按钮容器  begin*****/
+    .ic-search .btn-container{
+        width:100%;
+        height: 50px;
+    }
+    .btn-search{
+        width:100%;
+    }
+    .btn-search span{
+       margin: 0 20px;
+        letter-spacing: 10px;
+    }
+    /*搜索栏中的按钮容器  end*****/
+    /*****************部分1:搜索栏部分  end***/
+
+    /*****************部分2:列表部分  begin**/
+    .list-container{
+        display:none;
+    }
+    .list-container-m{
+        display:block;
+        width:100%;
+        min-height: 150px;
+    }
+    /*列表项*/
+    .list-item-m{
+        width:100%;
+        height: auto;
+        border: 1px dashed grey;
+        min-height: 150px;
+    }
+    /*列表项中的图片*/
+    .list-item-m img{
+        width:140px;
+        height: 120px;
+        float: left;
+        position: relative;
+        top:15px;
+    }
+    /*列表项中宽度自适应的混合容器*/
+    .list-item-m .mix-container-m{
+        height: 100%;
+        padding-left: 150px;
+        padding-top: 10px;
+    }
+    .mix-container-m .hos-name-m{
+        height: 23px;
+        font-size: 16px;
+        color:#666;
+        font-weight: 600;
+    }
+    .mix-container-m .hoslevel-code-m{
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        background-color: #FDE8C9;
+        color:#E87404;
+    }
+    .mix-container-m .cant-code-m{
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        background-color: #CBF0BA;
+        color:#3DAFA7;
+        margin-left: 20px;
+    }
+    .mix-container .msg{
+        display: block;
+        width:100%;
+        float: left;
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+    /*****************部分2:列表部分  end**/
+
+    /******************内容展示  end*****************/
+}

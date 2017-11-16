@@ -1,0 +1,254 @@
+#bg_test{
+    position: relative;
+    top:180px;
+    background-color: purple;
+}
+
+
+/************************************/
+/***************平板以及手机下的列表****/
+
+/********************************/
+/*************手机下的内容展示*****/
+
+
+
+/***********************************************************************/
+/*******************信息展示容器     begin********************************/
+/****************容器左侧部分(列表)******************/
+
+/****************容器右侧部分(内容展示)  begin*******/
+
+/*****************右侧部分1:搜索栏部分  begin***/
+
+/********搜索栏中的搜索项 begin*/
+/*自定义*/
+.doc-info{
+    width:250px;
+    text-align: left;
+}
+/*自定义*/
+.dep-code,.doclevel-code{
+    width:200px;
+    text-align: left;
+}
+.dep-code select,.doclevel-code select{
+    text-align: center;
+}
+/**********搜索栏中的搜索项 end*/
+
+/*搜索栏中的按钮容器  begin*****/
+/*搜索栏中的按钮容器  end*****/
+
+/*****************右侧部分1:搜索栏部分  end***/
+
+/*****************右侧部分2:列表部分  begin**/
+/*自定义*/
+.doc_code,.doc_name,.dep_name,.doclevel_name,.doc_tel{
+    width:130px;
+    float:left;
+    text-align:center;
+}
+/**********列表中的按钮容器  begin*****/
+/**********列表中的按钮容器  end*****/
+/*****************右侧部分2:列表部分  end**/
+
+/*****************右侧部分3:分页部分  begin**/
+/*****************右侧部分3:分页部分  end**/
+
+/****************容器右侧部分(内容展示)  end*******/
+
+/***********************************************************************/
+/*******************信息展示容器     end********************************/
+
+
+
+/*媒体查询*/
+@media only screen and (max-width: 1200px) {
+    #bg_test{
+        background-color: gray;
+    }
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    /****************容器左侧部分(列表)******************/
+
+    /****************容器右侧部分(内容展示)  begin*******/
+    /*****************右侧部分1:搜索栏部分  begin***/
+    /*自定义*/
+    .doc-info,.dep-code,.doclevel-code{
+        width:200px;
+        text-align: left;
+    }
+    /*搜索栏中的按钮容器  begin*****/
+    /*搜索栏中的按钮容器  end*****/
+    /*****************右侧部分1:搜索栏部分  end***/
+
+    /*****************右侧部分2:列表部分  begin**/
+    /*自定义*/
+    .doc_code,.doc_name,.dep_name,.doclevel_name,.doc_tel{
+        width:120px;
+        float:left;
+        text-align:center;
+    }
+    /**********列表中的按钮容器  begin*****/
+    /**********列表中的按钮容器  end*****/
+    /*****************右侧部分2:列表部分  end**/
+
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+}
+
+@media only screen and (max-width: 992px) {
+    #bg_test{
+        background-color: pink;
+    }
+
+    /***********************************************************************/
+    /*******************信息展示容器     begin********************************/
+    /****************容器左侧部分(列表)******************/
+
+    /****************容器右侧部分(内容展示)  begin*******/
+    /*****************右侧部分1:搜索栏部分  begin***/
+    /*自定义*/
+    .doc-info,.dep-code,.doclevel-code{
+        width:180px;
+        text-align: left;
+    }
+    .dep-code select,.doclevel-code select{
+        width:120px;
+    }
+    /*****************右侧部分1:搜索栏部分  end***/
+
+    /*****************右侧部分2:列表部分  begin**/
+    /*自定义*/
+    .doc_code,.doc_name,.dep_name,.doclevel_name,.doc_tel{
+        width:110px;
+        float:left;
+        text-align:center;
+    }
+    /*****************右侧部分2:列表部分  end**/
+    /****************容器右侧部分(内容展示)  end*******/
+    /***********************************************************************/
+    /*******************信息展示容器     end********************************/
+
+
+    /******************************************/
+    /***************平板以及手机下的列表 begin****/
+    /*自定义*/
+    .info-list-mobile{
+        display: block;
+    }
+    /*自定义*/
+    .info-list-mobile a{
+        display: block;
+        width: 16.5%;
+        margin-right: 0.15%;
+    }
+    /*自定义*/
+    .last{
+        margin-right: 0;
+    }
+    /******************************************/
+    /***************平板以及手机下的列表 end****/
+
+}
+
+@media only screen and (max-width: 768px) {
+    #bg_test{
+        background-color: blue;
+    }
+    /*总容器 隐藏掉为移动端以上设计的信息展示容器*/
+
+
+    /*************************************/
+    /*************手机下的内容展示 begin*****/
+    /*****************部分1:搜索栏部分  begin***/
+    /*自定义*/
+    .doc-info-m{
+        width:100%;
+        float: left;
+    }
+    /*自定义*/
+    .dep-code-m{
+        width:49%;
+        float: left;
+    }
+    /*自定义*/
+    .doclevel-code-m{
+        width:49%;
+        float: right;
+    }
+    /*搜索栏中的按钮容器  begin*****/
+    /*搜索栏中的按钮容器  end*****/
+    /*****************部分1:搜索栏部分  end***/
+
+    /*****************部分2:列表部分 begin***/
+    /*自定义*/
+    .doc_name-m,.doc_tel-m{
+        display:block;
+        width:33%;
+        float:left;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*自定义*/
+    .doc_code-m{
+        display:block;
+        width:33%;
+        float:right;
+        text-align: right;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*自定义*/
+    .dep_name-m,.doclevel_name-m{
+        display:block;
+        width:33%;
+        float:left;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*自定义*/
+    .btn-container-m{
+        display:block;
+        width:33%;
+        float:right;
+        text-align: left;
+        height: 35px;
+        line-height: 35px;
+    }
+    /*自定义*/
+    .dep_name-m span{
+        display: block;
+        width:65px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        background-color: #CBF0BA;
+        color:#3DAFA7;
+        position: relative;
+        top:3px;
+    }
+    /*自定义*/
+    .doclevel_name-m span{
+        display: block;
+        width: 80px;
+        height: 28px;
+        line-height: 28px;
+        text-align: center;
+        background-color: #FDE8C9;
+        color: #E87404;
+        position: relative;
+        top: 3px;
+    }
+    /*****************部分2:列表部分 end***/
+
+    /****************部分3：分页部分 begin*/
+    /****************部分3：分页部分 end*/
+    /*************************************/
+    /*************手机下的内容展示 end*****/
+
+}
+
+

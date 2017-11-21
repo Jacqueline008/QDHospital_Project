@@ -3,7 +3,7 @@
 ##### 备注:        NIIT学期项目
 ##### 作者:        开源3班 李艺鸣
 ##### 项目在线地址: http://182.254.152.14/HOS/Pat/Treatment/hospitalShow
-##### 项目讲解视频在线观看: (优酷) 
+##### 项目讲解视频在线观看: (优酷) http://v.youku.com/v_show/id_XMzE3MzU0NjM2OA==.html?spm=a2h3j.8428770.3416059.1
 ##### 项目讲解视频在线观看: (百度网盘)http://pan.baidu.com/s/1bpEXoPx
 ****
 

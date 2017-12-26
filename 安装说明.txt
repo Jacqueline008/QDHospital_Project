@@ -1,0 +1,29 @@
++----------------------------------+
+           *安装说明*
+本说明针对青岛医院在线挂号平台项目，请按以下说明进行安装
+1：将“项目代码”目录中的HOS文件夹直接放入htdoc目录下
+2: 将“项目代码”目录中的hosdb.sql文件直接导入mysql数据库中
+3: 示例账户和密码：
+   系统管理员 用户名:admin     密码:123
+   医院管理员 用户名:HA001     密码:123
+   医院专家   用户名:QH001D001 密码:123
+   患者       可自行填写个人信息
++----------------------------------+
+
+项目本地网址：
+首页：  http://localhost/HOS/Pat/Treatment/hospitalShow
+系统管理员|医院管理员|医院专家 登录页面：http://localhost/HOS/Sys/Adminlogin/login
+
+
+项目在线网址：
+首页：  http://182.254.152.14/HOS/Pat/Treatment/hospitalShow
+系统管理员|医院管理员|医院专家 登录页面：http://182.254.152.14/HOS/Sys/Adminlogin/login
+
+GitHub:
+github:https://github.com/Jacqueline008/QDHospital_Project
+
+项目在线讲解网址:
+http://v.youku.com/v_show/id_XMzE3MzU0NjM2OA==.html?spm=a2hzp.8244740.0.0
+
++----------------------------------+
+

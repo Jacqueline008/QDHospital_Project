@@ -5,6 +5,11 @@
 ##### 项目在线地址: http://182.254.152.14/HOS/Pat/Treatment/hospitalShow
 ##### 项目讲解视频在线观看: (优酷) http://v.youku.com/v_show/id_XMzE3MzU0NjM2OA==.html?spm=a2h3j.8428770.3416059.1
 ##### 项目讲解视频在线观看: (百度网盘)http://pan.baidu.com/s/1bpEXoPx
+##### 示例账户和密码：
+      系统管理员 用户名:admin     密码:123
+      医院管理员 用户名:HA001     密码:123
+      医院专家   用户名:QH001D001 密码:123
+      患者 可自行填写个人信息
 ****
 
 ### 引言
